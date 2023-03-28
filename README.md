@@ -20,7 +20,7 @@
     <!-- BADGES -->
 
   <p align="center">
-    <img src="https://img.shields.io/github/last-commit/AnonHack3r1337/CTF?color=red&style=flat-square">
+    <img src="https://github.com/AnonHack3r1337/CTF?color=red&style=flat-square">
    </p>
   </h1>
 
