@@ -6,8 +6,8 @@
 
 
 
-- [HackTheBox](#hackthebox)> [Boxes](https://github.com/AnonHack3r1337/HackTheBox/tree/main/Boxes)
-    - [Easy](#easy)
+- [HackTheBox](#hackthebox)> [Boxes](Boxes)
+    - [Easy](Boxes/Easy)
       > ## 🚀 Easy Boxes
         > [Late](Boxes/Easy/Late/Late.md)
         > [Timelapse](Boxes/Easy/Late/Late.md)
