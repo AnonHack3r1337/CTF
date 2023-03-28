@@ -1,14 +1,3 @@
-# My GitHub README
-
-Welcome to my README!
-
-
-<div align="center">
-    <img src="example.svg" width="800" height="800" alt="css-in-readme">
-</div>
-
-
-
 # HackTheBox
 
 - [HackTheBox](#hackthebox)> [Boxes](#boxes)
@@ -26,3 +15,10 @@ Welcome to my README!
       - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
 
       - [Timelapse](Boxes/Easy/Late/Late.md)
+
+<div align="center">
+    <img src="example.svg" width="800" height="800" alt="css-in-readme">
+</div>
+
+
+
