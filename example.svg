@@ -8,15 +8,27 @@
           animation: mymove 2s infinite;
           text-align: center;
         }
+        
+.neon {
+  color: neon-red;
+  text-shadow: 0 0 10px neon-red;
+  animation: neon-animation 2s infinite;
+}
 
-        @keyframes mymove {
-          from {
-            color: red;
-          }
-          to {
-            color: yellow;
-          }
-        }
+@keyframes neon-animation {
+  0% {
+    color: neon-red;
+    text-shadow: 0 0 10px neon-red;
+  }
+  50% {
+    color: neon-purple;
+    text-shadow: 0 0 10px neon-purple;
+  }
+  100% {
+    color: blue;
+    text-shadow: 0 0 10px blue;
+  }
+}
       </style>
 
       <h1>AnonHack3r</h1>
