@@ -1,0 +1,21 @@
+#toc-dropdown {
+  width: 200px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('arrow-down.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+  margin-bottom: 20px;
+}
+
+#toc-dropdown option {
+  font-size: 16px;
+  font-weight: bold;
+}
