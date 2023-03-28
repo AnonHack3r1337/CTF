@@ -22,6 +22,17 @@
         > <a href="HackTheBox/Boxes/Easy/Timelapse/Timelapse.md"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
         </a>
         
+        > [Shocker](HackTheBox/Boxes/Easy/Shocker/shocker.md)
+        > 
+        > <a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" alt="late thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+        </a>
+        
+        > [Timelapse](HackTheBox/Boxes/Easy/Timelapse/Timelapse.md)
+        > 
+        > <a href="HackTheBox/Boxes/Easy/Timelapse/Timelapse.md"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+        </a>
+        
+                
     - ## 🔥 Medium Boxes
       - [Late](Boxes/Easy/Late/Late.md)
       - [Timelapse](Boxes/Easy/Late/Late.md)
