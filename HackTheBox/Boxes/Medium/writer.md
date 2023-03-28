@@ -1,4 +1,5 @@
 #Masscan:
+
 Discovered open port 80/tcp on 10.10.11.101                                    
 Discovered open port 139/tcp on 10.10.11.101                                   
 Discovered open port 445/tcp on 10.10.11.101                                   
@@ -113,3 +114,6 @@ root@writer:/tmp#
 
 
 boom!!!!
+	
+	
+![image](https://user-images.githubusercontent.com/129129988/228216947-7708b7e9-c905-49cc-a6e4-20c29438a654.png)
