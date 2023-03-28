@@ -12,28 +12,23 @@
 - [HackTheBox](#hackthebox)> [Boxes](Boxes)
     - [Easy](Boxes/Easy)
       > ## 🚀 Easy Boxes
-        > [Late](HackTheBox/Boxes/Easy/Late/Late.md)
-        > 
-        > <a href="HackTheBox/Boxes/Easy/Late/Late.md"><img src="thumbnails/late.png" alt="late thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
-        </a>
-        
-        > [Timelapse](HackTheBox/Boxes/Easy/Timelapse/Timelapse.md)
-        > 
-        > <a href="HackTheBox/Boxes/Easy/Timelapse/Timelapse.md"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
-        </a>
-        
-        > [Shocker](HackTheBox/Boxes/Easy/Shocker/shocker.md)
-        > 
-        > <a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
-        </a>
-        
-        > [Horizontall](HackTheBox/Boxes/Easy/horizontall.md)
-        > 
-        > <a href="HackTheBox/Boxes/Easy/horizontall.md)"><img src="thumbnails/timelapse.png" alt="Horizontall thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
-        </a>
-        
+      > 
+      > 
+		| Box | Thumbnail |
+		| --- | --------- |
+		| [Late](HackTheBox/Boxes/Easy/Late/Late.md) | <a href="HackTheBox/Boxes/Easy/Late/Late.md"><img src="thumbnails/late.png" alt="late thumbnail" 		style="width: 100px; height: 100px; object-fit: cover;"></a> |
+		| [Timelapse](HackTheBox/Boxes/Easy/Timelapse/Timelapse.md) | <a href="HackTheBox/Boxes/Easy/Timelapse/Timelapse.md"><img 								src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
+		| [Shocker](HackTheBox/Boxes/Easy/Shocker/Shocker.md) | <a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" 			alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
+		| [Horizontall](HackTheBox/Boxes/Easy/horizontall.md) | <a href="HackTheBox/Boxes/Easy/horizontall.md"><img src="thumbnails/horizontall.png" 			alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
+		| [writer](HackTheBox/Boxes/Easy/writer.md) | <a href="HackTheBox/Boxes/Easy/writer.md"><img src="thumbnails/writer.png"                      alt="writer thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
+
                 
     - ## 🔥 Medium Boxes
+      > 
+      > 
+		| Box | Thumbnail |
+		| --- | --------- |
+		| [writer](HackTheBox/Boxes/Medium/writer.md) | <a href="HackTheBox/Boxes/Medium/writer.md"><img src="thumbnails/writer.png"                      alt="writer thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
       - [Late](Boxes/Easy/Late/Late.md)
       - [Timelapse](Boxes/Easy/Late/Late.md)
       
