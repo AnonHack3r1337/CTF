@@ -1,67 +1,38 @@
 # HackTheBox
 
-## 🚀 Easy Boxes
+- [HackTheBox](#hackthebox)
+  - [Boxes](#boxes)
+    - [Easy](#easy)
+      - ## 🚀 Easy Boxes
+        - [Late](Boxes/Easy/Late/Late.md)
+        - [Timelapse](Boxes/Easy/Late/Late.md)
+        
+    - ## 🔥 Medium Boxes
+      - [Late](Boxes/Easy/Late/Late.md)
+      - [Timelapse](Boxes/Easy/Late/Late.md)
+      
+    - ## 💪 Hard Boxes
+      - [Late](Boxes/Easy/Late/Late.md)
+      - [Timelapse](Boxes/Easy/Late/Late.md)
 
-#### Late
-
-&emsp; [Late Machine Name](Boxes/Easy/Late/Late.md)
-
-#### Timelapse
-
-&emsp; [Timelapse Machine Name](Boxes/Easy/Timelapse/Timelapse.md)
-
-## 🔥 Medium Boxes
-- [Machine 4](./Boxes/Medium/Machine4.md)
-- [Machine 5](./Boxes/Medium/Machine5.md)
-
-
-## 💪 Hard Boxes
-
-* [Introduction](#introduction)
-* [Methodology](#methodology)
-  * [Boxes](#enumeration)
-# Table of Contents
-
-
-- [Machine 1](./Boxes/Easy/Machine1.md)
-- [Machine 2](./Boxes/Easy/Machine2.md)
-- [Machine 3](./Boxes/Easy/Machine3.md)
-
-## 🔥 Medium Boxes
-- [Machine 4](./Boxes/Medium/Machine4.md)
-- [Machine 5](./Boxes/Medium/Machine5.md)
-- [Machine 6](./Boxes/Medium/Machine6.md)
-
-## 💪 Hard Boxes
-- [Machine 7](./Boxes/Hard/Machine7.md)
-- [Machine 8](./Boxes/Hard/Machine8.md)
-- [Machine 9](./Boxes/Hard/Machine9.md)
-
-  * [Enumeration](#enumeration)
-  * [Exploitation](#exploitation)
-  * [Privilege Escalation](#privilege-escalation)
-* [Conclusion](#conclusion)
-
-## Introduction
-
-This is the introduction section.
-
-## Methodology
-
-This is the methodology section.
-
-### Enumeration
-
-This is the enumeration subsection.
-
-### Exploitation
-
-This is the exploitation subsection.
-
-### Privilege Escalation
-
-This is the privilege escalation subsection.
-
-## Conclusion
-
-This is the conclusion section.
+<style>
+ 
+  /* Add some styling to the table of contents */
+  #markdown-toc {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+  
+  #markdown-toc a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  #markdown-toc a:hover {
+    color: #007bff;
+  }
+ 
+</style>
