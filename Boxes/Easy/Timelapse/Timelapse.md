@@ -44,6 +44,7 @@ PORT     STATE SERVICE
 
 
 Add timelapse.htb to /etc/hosts
+
 ![image](https://user-images.githubusercontent.com/129129988/228107977-f15d0ee4-4d38-4988-944f-bb0233b247f9.png)
 
 running masscan also revealed PORT     STATE SERVICE  VERSION 
