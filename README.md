@@ -4,11 +4,11 @@
 
 ### Easy
 
-### Late
+##### Late
 
 &emsp; [Late Machine Name](Boxes/Easy/Late/Late.md)
 
-#### Timelapse
+###### Timelapse
 
 &emsp; [Timelapse Machine Name](Boxes/Easy/Timelapse/Timelapse.md)
 
