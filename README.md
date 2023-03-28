@@ -9,8 +9,8 @@
 - [HackTheBox](#hackthebox)> [Boxes](Boxes)
     - [Easy](Boxes/Easy)
       > ## 🚀 Easy Boxes
-        > [Late](Hack The Box/Boxes/Easy/Late/Late.md)
-        > [Timelapse](Hack The Box/Boxes/Easy/Timelapse/Timelapse.md)
+        > [Late](HackTheBox/Boxes/Easy/Late/Late.md)
+        > [Timelapse](HackTheBox/Boxes/Easy/Timelapse/Timelapse.md)
         
     - ## 🔥 Medium Boxes
       - [Late](Boxes/Easy/Late/Late.md)
