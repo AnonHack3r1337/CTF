@@ -1,91 +1,89 @@
-<svg fill="none" viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">  
     <foreignObject width="100%" height="100%">
-        
-        
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <style>
-            h1 {
-                color: red;
-                animation: mymove 2s infinite;
-            }
+ <div xmlns="http://www.w3.org/1999/xhtml">
+  <!-- Define the styles -->
+  <style>
+    /* Node styles */
+    .node {
+      fill: #fff;
+      stroke: #000;
+      stroke-width: 2px;
+      font: 14px sans-serif;
+    }
+    .node--leaf {
+      fill: #fff;
+      stroke: #000;
+      stroke-width: 2px;
+    }
+    /* Link styles */
+    .link {
+      fill: none;
+      stroke: #ccc;
+      stroke-width: 1.5px;
+    }
+    /* Custom styles */
+    .node--leaf text {
+      font-weight: bold;
+    }
+    a:hover .node {
+      stroke: #E91E63;
+    }
+    .node--active {
+      stroke: #E91E63 !important;
+      stroke-width: 3px !important;
+    }
+    .node--active text {
+      fill: #E91E63;
+      font-weight: bold;
+    }
+  </style>
 
-            @keyframes mymove {
-                from {
-                    color: red;
-                }
-                to {
-                    color: yellow;
-                }
-            }
-            </style>
-            <h1>HELLO WORLD!</h1>
-            <style>
-    #hackthebox {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 1.2rem;
-        padding: 1rem;
-        border: 2px solid #007ACC;
-        border-radius: 1rem;
-    }
-    
-    .box-section {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 1rem 0;
-    }
-    
-    .box-header {
-        font-size: 1.5rem;
-        margin: 0.5rem 0;
-    }
-    
-    .box-title {
-        font-size: 1.2rem;
-        margin: 0.5rem 0;
-    }
-    
-    .box-link {
-        margin: 0.25rem 0;
-    }
-    
-    .box-link:hover {
-        text-decoration: underline;
-    }
-</style>
-
-            
-        </div>
-        
-        
-        <div id="hackthebox">
-    <div class="box-section">
-        <div class="box-header">Boxes</div>
-        <div class="box-title">Easy Boxes</div>
-        <div class="box-link"><a href="Boxes/Easy/Late/Late.md">Late</a></div>
-        <div class="box-link"><a href="Boxes/Easy/Timelapse/Timelapse.md">Timelapse</a></div>
-    </div>
-    
-    <div class="box-section">
-        <div class="box-header">Boxes</div>
-        <div class="box-title">Medium Boxes</div>
-        <div class="box-link"><a href="Boxes/Medium/Late/Late.md">Late</a></div>
-        <div class="box-link"><a href="Boxes/Medium/Timelapse/Timelapse.md">Timelapse</a></div>
-    </div>
-    
-    <div class="box-section">
-        <div class="box-header">Boxes</div>
-        <div class="box-title">Hard Boxes</div>
-        <div class="box-link"><a href="Boxes/Hard/Late/Late.md">Late</a></div>
-        <div class="box-link"><a href="Boxes/Hard/Timelapse/Timelapse.md">Timelapse</a></div>
-    </div>
-</div>
-
-        
-        
-        
-        
+  <!-- Define the box structure -->
+  <g transform="translate(100,50)">
+    <g class="node">
+      <text x="-40" y="10">HackTheBox</text>
+    </g>
+    <g transform="translate(50,50)">
+      <g class="node">
+        <text x="-40" y="10">Boxes</text>
+      </g>
+      <g transform="translate(50,50)">
+        <g class="node">
+          <text x="-40" y="10">Easy</text>
+        </g>
+        <g transform="translate(50,50)">
+          <g class="node node--leaf">
+            <a href="Boxes/Easy/Late/Late.md">
+              <rect x="-50" y="-10" width="100" height="20" rx="10" ry="10" />
+              <text x="0" y="5" text-anchor="middle">Late</text>
+            </a>
+          </g>
+          <g class="node node--leaf">
+            <a href="Boxes/Easy/Timelapse/Timelapse.md">
+              <rect x="-50" y="40" width="100" height="20" rx="10" ry="10" />
+              <text x="0" y="55" text-anchor="middle">Timelapse</text>
+            </a>
+          </g>
+        </g>
+        <g class="node">
+          <text x="100" y="10">🔥 Medium Boxes</text>
+        </g>
+        <g transform="translate(150,50)">
+          <g class="node node--leaf">
+            <a href="Boxes/Easy/Late/Late.md">
+              <rect x="-50" y="-10" width="100" height="20" rx="10" ry="10" />
+              <text x="0" y="5" text-anchor="middle">Late</text>
+            </a>
+          </g>
+          <g class="node node--leaf">
+            <a href="Boxes/Easy/Timelapse/Timelapse.md">
+              <rect x="-50" y="40" width="100" height="20" rx="10" ry="10" />
+              <text x="0" y="55" text-anchor="middle">Timelapse</text>
+            </a>
+          </g>
+             </div>
     </foreignObject>
 </svg>
+
+
+          
