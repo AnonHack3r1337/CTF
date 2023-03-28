@@ -6,11 +6,11 @@
 
 ### Late
 
-&emsp; [Late Machine Name](Boxes/Late/Late.md)
+&emsp; [Late Machine Name](Boxes/Easy/Late/Late.md)
 
 #### Timelapse
 
-&emsp; [Timelapse Machine Name](Boxes/Late/Timelapse.md)
+&emsp; [Timelapse Machine Name](Boxes/Easy/Timelapse/Timelapse.md)
 
 * [Introduction](#introduction)
 * [Methodology](#methodology)
