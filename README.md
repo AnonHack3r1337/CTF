@@ -10,7 +10,9 @@
     - [Easy](Boxes/Easy)
       > ## 🚀 Easy Boxes
         > [Late](HackTheBox/Boxes/Easy/Late/Late.md)
+        
         > [Timelapse](HackTheBox/Boxes/Easy/Timelapse/Timelapse.md)
+        [![Timelapse](![image](https://user-images.githubusercontent.com/129129988/228186454-ccb6a8c7-a6f0-4d10-8ee8-9af7cb64c96b.png))](HackTheBox/Boxes/Easy/Timelapse/Timelapse.md)
         
     - ## 🔥 Medium Boxes
       - [Late](Boxes/Easy/Late/Late.md)
