@@ -24,12 +24,12 @@
         
         > [Shocker](HackTheBox/Boxes/Easy/Shocker/shocker.md)
         > 
-        > <a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" alt="late thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+        > <a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
         </a>
         
-        > [Horizontall](HackTheBox/Boxes/Easy/Horizontall/Horizontall.md)
+        > [Horizontall](HackTheBox/Boxes/Easy/horizontall.md)
         > 
-        > <a href="HackTheBox/Boxes/Easy/Horizontall/Horizontall.md"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+        > <a href="HackTheBox/Boxes/Easy/horizontall.md)"><img src="thumbnails/timelapse.png" alt="Horizontall thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
         </a>
         
                 
