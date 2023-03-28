@@ -1,20 +1,16 @@
 # HackTheBox
 
-# Table of Contents
-
-# HackTheBox
-
 ## Boxes
 
 ### Easy
 
 ### Late
 
-&emsp; [Late Machine Name](Late/Late.md)
+&emsp; [Late Machine Name](Boxes/Late/Late.md)
 
 #### Timelapse
 
-&emsp; [Timelapse Machine Name](Late/Timelapse.md)
+&emsp; [Timelapse Machine Name](Boxes/Late/Timelapse.md)
 
 * [Introduction](#introduction)
 * [Methodology](#methodology)
