@@ -1,23 +1,28 @@
 # HackTheBox
 
-## Boxes
+## 🚀 Easy Boxes
 
-### Easy
-
-##### Late
+#### Late
 
 &emsp; [Late Machine Name](Boxes/Easy/Late/Late.md)
 
-###### Timelapse
+#### Timelapse
 
 &emsp; [Timelapse Machine Name](Boxes/Easy/Timelapse/Timelapse.md)
+
+## 🔥 Medium Boxes
+- [Machine 4](./Boxes/Medium/Machine4.md)
+- [Machine 5](./Boxes/Medium/Machine5.md)
+
+
+## 💪 Hard Boxes
 
 * [Introduction](#introduction)
 * [Methodology](#methodology)
   * [Boxes](#enumeration)
 # Table of Contents
 
-## 🚀 Easy Boxes
+
 - [Machine 1](./Boxes/Easy/Machine1.md)
 - [Machine 2](./Boxes/Easy/Machine2.md)
 - [Machine 3](./Boxes/Easy/Machine3.md)
