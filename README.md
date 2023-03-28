@@ -29,7 +29,7 @@
         
         > [Horizontall](HackTheBox/Boxes/Easy/Horizontall/Horizontall.md)
         > 
-        > <a href="HackTheBox/Boxes/Easy/Timelapse/Timelapse.md"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+        > <a href="HackTheBox/Boxes/Easy/Horizontall/Horizontall.md"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
         </a>
         
                 
