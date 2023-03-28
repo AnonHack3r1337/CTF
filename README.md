@@ -13,6 +13,9 @@
     - [Easy](Boxes/Easy)
       > ## 🚀 Easy Boxes
         > [Late](HackTheBox/Boxes/Easy/Late/Late.md)
+        > 
+        > <a href="HackTheBox/Boxes/Easy/Late/Late.md"><img src="thumbnails/late.png" alt="late thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+        </a>
         
         > [Timelapse](HackTheBox/Boxes/Easy/Timelapse/Timelapse.md)
         > 
