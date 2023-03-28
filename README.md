@@ -21,6 +21,7 @@
 		| [Shocker](HackTheBox/Boxes/Easy/Shocker/Shocker.md) | <a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" 			alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
 		| [Horizontall](HackTheBox/Boxes/Easy/horizontall.md) | <a href="HackTheBox/Boxes/Easy/horizontall.md"><img src="thumbnails/horizontall.png" 			alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
 		| [writer](HackTheBox/Boxes/Easy/writer.md) | <a href="HackTheBox/Boxes/Easy/writer.md"><img src="thumbnails/writer.png"                      alt="writer thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
+		| [driver](HackTheBox/Boxes/Easy/driver.md) | <a href="HackTheBox/Boxes/Easy/driver.md"><img src="thumbnails/driver.png"                      alt="driver thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></a> |
 
                 
     - ## 🔥 Medium Boxes
