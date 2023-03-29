@@ -25,8 +25,6 @@
   </h1>
 
 <!-- BADGES -->
-  
-</head>
 <body>
 	<h1 align="center">HackTheBox Writeups</h1>
 	<table align="center">
@@ -85,9 +83,9 @@
 
 <!-- CONTACT -->
   
-<h2 align="center">Contact</h2>
+<h2 align="center">Contact Me</h2>
     <p align="center">
- Contact us on our server.
+ <a href="https://twitter.com/AnonHack3r">Direct Message on Twitter</a>
 </p>
 
 <!-- CONTACT -->
