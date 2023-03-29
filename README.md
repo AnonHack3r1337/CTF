@@ -38,6 +38,7 @@
 					<details>
 						<summary><u><b>Easy Boxes</b></u></summary>
 						<ul style="list-style:none;">
+							<li><a href="HackTheBox/Boxes/Easy/paper.md"><img src="thumbnails/paper.png" alt="paper thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Paper</br></a></li>
 							<li><a href="HackTheBox/Boxes/Easy/Late/Late.md"><img src="thumbnails/late.png" alt="late thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Late</br></a></li>
 							<li><a href="HackTheBox/Boxes/Easy/Timelapse/Timelapse.md"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>TimeLapse</br></a></li>
 							<li><a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Shocker</br></a></li>
@@ -54,6 +55,7 @@
 					<details>
 						<summary><u><b>Medium Boxes</b></u></summary>
 						<ul>
+							<li><a href="HackTheBox/Boxes/Medium/meta.md"><img src="thumbnails/meta.png" alt="meta thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Meta</br></a></li>
 							<li><a href="HackTheBox/Boxes/Medium/writer.md"><img src="thumbnails/writer.png" alt="writer thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Writer</br></a></li>
 							<li><a href="HackTheBox/Boxes/Medium/seal.md"><img src="thumbnails/seal.png" alt="seal thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Seal</br></a></li>
 							<li><a href="HackTheBox/Boxes/Medium/shibboleth.md"><img src="thumbnails/shibboleth.png" alt="shibboleth thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Shibboleth</br></a></li>
