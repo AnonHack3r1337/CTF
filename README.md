@@ -43,6 +43,7 @@
 							<li><a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Shocker</br></a></li>
 							<li><a href="HackTheBox/Boxes/Easy/horizontall.md"><img src="thumbnails/horizontall.png" alt="horizontall thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Horizontall</br></a></li>
 							<li><a href="HackTheBox/Boxes/Easy/driver.md"><img src="thumbnails/driver.png" alt="driver thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Driver</br></a></li>
+							<li><a href="HackTheBox/Boxes/Easy/secret.md"><img src="thumbnails/secret.png" alt="secret thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Secret</br></a></li>
 						</ul>
 					</details>
 				</td>
@@ -51,7 +52,8 @@
 					<details>
 						<summary><u><b>Medium Boxes</b></u></summary>
 						<ul>
-							<li><a href="HackTheBox/Boxes/Easy/writer.md"><img src="thumbnails/writer.png" alt="writer thumbnail" style="width: 100px; height: 100px; object-fit: cover;">writer</a></li>
+							<li><a href="HackTheBox/Boxes/Medium/writer.md"><img src="thumbnails/writer.png" alt="writer thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Writer</br></a></li>
+							<li><a href="HackTheBox/Boxes/Medium/seal.md"><img src="thumbnails/seal.png" alt="seal thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Seal</br></a></li>
 						</ul>
 					</details>
 				</td>
