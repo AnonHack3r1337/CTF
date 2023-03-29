@@ -55,6 +55,7 @@
 						<ul>
 							<li><a href="HackTheBox/Boxes/Medium/writer.md"><img src="thumbnails/writer.png" alt="writer thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Writer</br></a></li>
 							<li><a href="HackTheBox/Boxes/Medium/seal.md"><img src="thumbnails/seal.png" alt="seal thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Seal</br></a></li>
+							<li><a href="HackTheBox/Boxes/Medium/shibboleth.md"><img src="thumbnails/shibboleth.png" alt="shibboleth thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Shibboleth</br></a></li>
 						</ul>
 					</details>
 				</td>
