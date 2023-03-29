@@ -1,4 +1,4 @@
-![image](HackThebox/Boxes/Easy/PWND/Driver.png)
+![image](PWND/Driver.png)
 
 #Masscan - Nmap 
 ```
