@@ -8,13 +8,13 @@
 </div>
   <h1 align="center">Writeups - Notes - CTF's</h1>
     <h3 align="center">
-      <a href="https://github.com/AnonHack3r1337/CTF/tree/main/HackTheBox">HackTheBox > Notes</a>
+    ·
+      <a href="https://app.hackthebox.com/profile/480696">AnonHack3r</a>
     ·
       <a href="https://twitter.com/AnonHack3r">Twitter</a>
     ·
       <a href="https://www.youtube.com/@AnonHack3r_1337">YouTube</a>
     ·
-      <a href="https://app.hackthebox.com/profile/480696">AnonHack3r</a>
     </h3>  
 </p>
    <!-- BADGES -->
@@ -32,40 +32,39 @@
 	<table align="center">
 		<thead>
 		</thead>
-		<tbody>
+		<tbody align="center";>
         </tr>
             <tr>
-				<td style="text-align: center;">
-					<a href="Boxes/Easy"><span style="font-size: 24px; vertical-align: middle;">🚀</span><br>Easy Boxes</a>
+				<td  style="text-align: center;">
+					<a href="HackTheBox/Boxes/Easy"><span style="font-size: 24px; vertical-align: middle;">🚀</span ><br align="center";>Easy Boxes</a>
 					<details>
 						<summary><u><b>Easy Boxes</b></u></summary>
-						<ul>
-							<li><a href="Boxes/Easy/Late"><img src="thumbnails/late.png" alt="late thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Late</a></li>
-							<li><a href="Boxes/Easy/Timelapse"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Timelapse</a></li>
-							<li><a href="Boxes/Easy/Shocker"><img src="thumbnails/shocker.png" alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Shocker</a></li>
-							<li><a href="Boxes/Easy/horizontall.md"><img src="thumbnails/horizontall.png" alt="horizontall thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Horizontall</a></li>
+						<ul style="list-style:none;">
+							<li><a href="HackTheBox/Boxes/Easy/Late/Late.md"><img src="thumbnails/late.png" alt="late thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Late</br></a></li>
+							<li><a href="HackTheBox/Boxes/Easy/Timelapse/Timelapse.md"><img src="thumbnails/timelapse.png" alt="Timelapse thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>TimeLapse</br></a></li>
+							<li><a href="HackTheBox/Boxes/Easy/Shocker/Shocker.md"><img src="thumbnails/shocker.png" alt="shocker thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Shocker</br></a></li>
+							<li><a href="HackTheBox/Boxes/Easy/horizontall.md"><img src="thumbnails/horizontall.png" alt="horizontall thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Horizontall</br></a></li>
+							<li><a href="HackTheBox/Boxes/Easy/driver.md"><img src="thumbnails/driver.png" alt="driver thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Driver</br></a></li>
 						</ul>
 					</details>
 				</td>
 				<td style="text-align: center;">
-					<a href="Boxes/Medium"><span style="font-size: 24px;">🔥</span><br>Medium Boxes</a>
+					<a href="HackTheBox/Boxes/Medium"><span style="font-size: 24px;">🔥</span><br>Medium Boxes</a>
 					<details>
 						<summary><u><b>Medium Boxes</b></u></summary>
 						<ul>
-							<li><a href="Boxes/Medium/Blunder"><img src="thumbnails/blunder.png" alt="Blunder thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Blunder</a></li>
-							<li><a href="Boxes/Medium/Bounty"><img src="thumbnails/bounty.png" alt="Bounty thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Bounty</a></li>
-							<li><a href="Boxes/Medium/Writeup"><img src="thumbnails/writeup.png" alt="Writeup thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Writeup</a></li>
+							<li><a href="HackTheBox/Boxes/Easy/writer.md"><img src="thumbnails/writer.png" alt="writer thumbnail" style="width: 100px; height: 100px; object-fit: cover;">writer</a></li>
 						</ul>
 					</details>
 				</td>
 				<td style="text-align: center;">
-					<a href="Boxes/Medium"><span style="font-size: 24px;">💪</span><br>Hard Boxes</a>
+					<a href="HackTheBox/Boxes/Hard"><span style="font-size: 24px;">💪</span><br>Hard Boxes</a>
 					<details>
 						<summary><u><b>Hard Boxes</b></u></summary>
 						<ul>
-							<li><a href="Boxes/Medium/Blunder"><img src="thumbnails/blunder.png" alt="Blunder thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Blunder</a></li>
-							<li><a href="Boxes/Medium/Bounty"><img src="thumbnails/bounty.png" alt="Bounty thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Bounty</a></li>
-							<li><a href="Boxes/Medium/Writeup"><img src="thumbnails/writeup.png" alt="Writeup thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Writeup</a></li>
+							<li><a href="HackTheBox/Boxes/Easy/writer.md"><img src="thumbnails/blunder.png" alt="Blunder thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Blunder</a></li>
+							<li><a href="HackTheBox/Boxes/Easy/writer.md"><img src="thumbnails/bounty.png" alt="Bounty thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Bounty</a></li>
+							<li><a href="HackTheBox/Boxes/Easy/writer.md"><img src="thumbnails/writeup.png" alt="Writeup thumbnail" style="width: 100px; height: 100px; object-fit: cover;">Writeup</a></li>
 						</ul>
 					</details>
 				</td>
