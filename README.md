@@ -44,6 +44,7 @@
 							<li><a href="HackTheBox/Boxes/Easy/horizontall.md"><img src="thumbnails/horizontall.png" alt="horizontall thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Horizontall</br></a></li>
 							<li><a href="HackTheBox/Boxes/Easy/driver.md"><img src="thumbnails/driver.png" alt="driver thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Driver</br></a></li>
 							<li><a href="HackTheBox/Boxes/Easy/secret.md"><img src="thumbnails/secret.png" alt="secret thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Secret</br></a></li>
+							<li><a href="HackTheBox/Boxes/Easy/backdoor.md"><img src="thumbnails/backdoor.png" alt="backdoor thumbnail" style="width: 100px; height: 100px; object-fit: cover;"><br>Backdoor</br></a></li>
 						</ul>
 					</details>
 				</td>
