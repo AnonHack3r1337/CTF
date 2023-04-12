@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>test</title>
+	<link rel="stylesheet" href="../../../../css/style.css" />
+	<style>
+		h1 {
+			color: #00ff00;
+			/* change the color of the main heading */
+		}
+
+		h3 {
+			color: #ff00ff;
+			/* change the color of the subheadings */
+		}
+
+		a {
+			color: #ffffff;
+			/* change the color of the links */
+			text-decoration: none;
+			/* remove underlines from links */
+		}
+	</style>
+</head>
+<body>
+	<header class="writeups">
+		<h1 class="neon textHeading">Writeups - Notes - CTF's</h1>
+			<h3 class="links2-custom">
+				·
+				<a href="https://twitter.com/AnonHack3r" class="custom-link2">Twitter</a>
+				·
+				<a href="https://www.youtube.com/@AnonHack3r_1337" class="custom-link2">YouTube</a>
+				·
+				<a href="https://app.hackthebox.com/profile/480696" class="custom-link2">AnonHack3r</a>
+				·
+			</h3>
+	</header>
+	
+	<main class="topics-container">
+		<div >
+			<p>
+				<h1 class="custom-heading neon" data-value="HackTheBox Writeups">HackTheBox Writeups</h1>
+			</p>
+		</div>
+
+		<div class="writeupNotes">
+			<h1 id="nmap-scan">Nmap Scan</h1>
+<p><img src="https://user-images.githubusercontent.com/129129988/228128602-5d37466e-4cb3-47d9-9f5a-61b65618bc77.png" alt="masscan"></p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228128618-ab0b6e36-753d-4459-8c69-a0859b12f614.png" alt="nmap"></p>
+<p>nmap -sC -sV -p22,80, 10.129.167.161 -o nmap/late  -v -e tun0</p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228128646-66bc399d-2b8d-4131-a464-21d34f4deb43.png" alt="nmap-scan"></p>
+<h2 id="open-ports">Open Ports</h2>
+<p>we have ports 22 running ssh version 7.6p1 
+and port 80 on a nginx server version 1.14.0</p>
+<p>lets jump in. </p>
+<h1 id="enumeration">Enumeration</h1>
+<p>Checking out the page..... we see a link on how we can edit photos online..</p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228128804-aa51d523-a643-4cf8-827c-88a48b13319c.png" alt="website"></p>
+images.late.htb
+<p>intresting lets add these domains so we can access them.</p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228128829-028bd2b8-6a46-447a-900f-8a668a0a4c4b.png" alt="hosts"></p><p>
+	<img src="https://user-images.githubusercontent.com/129129988/228128843-cf6f1293-69f0-44f1-a2fb-136bed863000.png" alt="addhosts"></p>
+<p>if you dont...</p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228128915-72f40f39-2594-4ae6-b8b7-26bb1d679ab3.png" alt="websiteWithHosts"></p>
+<p>Now this is intresting looks like we can convert images to text and it uses flask. 
+<img src="https://user-images.githubusercontent.com/129129988/228128936-98f2bb02-7581-4870-8ddb-7fb99d441bbb.png" alt="website"></p><p></p>
+<p><a href="https://medium.com/@nyomanpradipta120/ssti-in-flask-jinja2-20b068fdaeee">https://medium.com/@nyomanpradipta120/ssti-in-flask-jinja2-20b068fdaeee<p></p></a>
+Using this article I figuered out that maybe we can write some text inside the picture. Once converted we can check for SSTI. </p>
+<p>I used LibertyLight<p></p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228128995-f49a56b7-b914-4bfe-9524-0c362c3a8ae7.png" alt="ssti"></p>
+<img src="https://user-images.githubusercontent.com/129129988/228129011-696c51d6-be14-431c-89a4-c9da3575f2c5.png" alt="ssti"></p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228129025-038324f9-5ec0-4710-8e74-f1dff8450235.png" alt="save"></p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228129040-c57b8871-a025-4ce7-941a-11daf9550214.png" alt="results"></p>
+<p>inside the results.txt we can see SSTI. </p>
+<h2 id="privesc">PrivEsc</h2>
+<p>running linpeas.sh we can see that we can write to a fine in /usr/local/sbin
+ssh-alert.sh</p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228129176-aa8ac9bc-8d11-4cdb-ba8c-61ac00e19916.png" alt="nc"></p>
+<p>i tried to get a reverse shell but it did not work; i also extracted the root id_rsa; with chmod 600 and that did not work; i also added my id_rsa.pub to authrorized keys; Which also didnt work. Asked for root password. </p>
+<p>At the end seens we can read files I decided to access /root/root.txt hopeing its there. </p>
+<p><img src="https://user-images.githubusercontent.com/129129988/228129188-decee19b-0f5c-448a-a12e-07429c301226.png" alt="image"></p>
+<p>Command to get root Flag.</p>
+<p>echo &#39;cat /root/root.txt &gt; /tmp/root.txt&#39; &gt;&gt; /usr/local/sbin/ssh-alert.sh;ssh localhost &quot;exit&quot;; cat /tmp/root.txt</p>
+<p> Let me know if you were able to obtain a shell; I would really like to know how.</p>
+		</div>
+		<div class="container">
+			<div class="terminal-box">
+				<div class="terminal-body">
+					<div style="text-align: center;"></div>
+					<img src="../../../../example.svg" class="example-svg">
+					<div class="space">
+						<p></p>
+					</div>
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<p class="command-text"><br>For a list of the commands, type<br>
+							<span class="help-txt">"help"</span>
+						</p>
+						<div
+							<div class="cursor">
+								<input id="text" class="txt-input" placeholder="Type something..." autocapitalize="off"
+									autocorrect="off" inputmode="text">
+								<p></p>
+								<i></i>
+							</div>
+						</div>
+					</div>
+					<div class="content"></div>
+				</div>
+			</div>
+		</div>
+		<div class="badge">
+			<!-- BADGES -->
+			<p>
+				<img src="https://img.shields.io/github/last-commit/AnonHack3r1337/CTF?color=red&style=flat-square">
+				<!-- BADGES -->
+			</p>
+		</div>
+		
+	</main>
+
+	<footer class="footerWithContact">
+		<div class="contactMe">
+			<!-- Footer content here -->
+			<p>Contact Me
+				
+			</p>
+		</div>
+		<div >
+			<p>
+			<a href="https://twitter.com/AnonHack3r" class="DM">
+			<span>
+				Direct Message on Twitter
+			</span>
+			</a>
+			</p>
+			<p></p>
+		</div>
+		<p></p>
+	</footer>
+
+	<script src="../../../../js/main.js"></script>
+</body>
+
+</html>
