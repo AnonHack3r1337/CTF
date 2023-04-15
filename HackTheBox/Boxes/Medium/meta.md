@@ -1,3 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>test</title>
+	<link rel="stylesheet" href="../../../css/style.css" />
+	<style>
+		h1 {
+			color: #00ff00;
+			/* change the color of the main heading */
+		}
+
+		h3 {
+			color: #ff00ff;
+			/* change the color of the subheadings */
+		}
+
+		a {
+			color: #ffffff;
+			/* change the color of the links */
+			text-decoration: none;
+			/* remove underlines from links */
+		}
+	</style>
+</head>
+
 ![image](PWND/Meta.png)
 
 # NMap 
@@ -238,3 +268,5 @@ now run command with sudo.
 ![image](https://user-images.githubusercontent.com/129129988/228426479-0874dc2f-9c56-4dac-a543-d5b0cf601201.png)
 
 We are Root. 
+
+</html>

