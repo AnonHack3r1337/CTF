@@ -150,3 +150,25 @@ document.querySelectorAll('details').forEach(function(details) {
     }
   });
 });
+
+// Elements
+const openPopup = document.getElementById('openPopup');
+const closePopup = document.getElementById('closePopup');
+const popup = document.getElementById('popup');
+
+// Open pop-up
+openPopup.addEventListener('click', () => {
+  popup.style.display = 'flex';
+});
+
+// Close pop-up
+closePopup.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// Close pop-up when clicking outside of it
+window.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    popup.style.display = 'none';
+  }
+});
