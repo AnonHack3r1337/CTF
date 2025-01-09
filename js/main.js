@@ -169,20 +169,19 @@ function closePopup() {
 
 // Function to close the popup if clicked outside the popup content
 function closePopupIfClickedOutside(event) {
+  // Check if the clicked element is outside the popup content
   if (!popupContent.contains(event.target)) {
-    popup.style.display = 'none';
+    closePopup();
   }
 }
 
-// Stop event propagation for clicks/touches inside the popup content
-popupContent.addEventListener('click', (event) => event.stopPropagation());
-popupContent.addEventListener('touchstart', (event) => event.stopPropagation());
-
-// Event listeners for opening and closing the popup
+// Add event listeners for opening and closing the popup
 openPopupButton.addEventListener('click', openPopup);
 closePopupButton.addEventListener('click', closePopup);
+
+// Add event listener for clicks on the popup background
 popup.addEventListener('click', closePopupIfClickedOutside);
 
-
-
-
+// Prevent propagation of clicks and touches inside the popup content
+popupContent.addEventListener('click', (event) => event.stopPropagation());
+popupContent.addEventListener('touchstart', (event) => event.stopPropagation());
