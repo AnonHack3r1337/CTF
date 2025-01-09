@@ -156,28 +156,17 @@ const openPopup = document.getElementById('openPopup');
 const closePopup = document.getElementById('closePopup');
 const popup = document.getElementById('popup');
 
-
-window.onclick = function(event) {
-  if (event.target == popup) {
- popup.style.display = "none";
-}
-} 
-
-
-const popupContent = document.querySelector('.popup-content');
-
-let angle = 0; // Start with an angle of 0
-const speed = 1; // Set the speed of the animation (change this value to adjust speed)
-
-function animateGlow() {
-  angle += speed; // Increase the angle to move the gradient
-
-  // Apply the animation by adjusting the background position using the angle
-  popupContent.style.setProperty('--bg-position', `${angle}% 50%`);
-
-  // Call the function again to keep the animation going
-  requestAnimationFrame(animateGlow);
+// Function to close the popup
+function closePopupIfClickedOutside(event) {
+  if (event.target === popup) {
+    popup.style.display = 'none';
+  }
 }
 
-// Start the animation
-animateGlow();
+// Add event listeners for both `click` and `touchstart`
+window.addEventListener('click', closePopupIfClickedOutside);
+window.addEventListener('touchstart', closePopupIfClickedOutside);
+
+
+
+
