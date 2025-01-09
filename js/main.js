@@ -156,19 +156,28 @@ const openPopup = document.getElementById('openPopup');
 const closePopup = document.getElementById('closePopup');
 const popup = document.getElementById('popup');
 
-// Open pop-up
-openPopup.addEventListener('click', () => {
-  popup.style.display = 'flex';
-});
 
-// Close pop-up
-closePopup.addEventListener('click', () => {
-  popup.style.display = 'none';
-});
+window.onclick = function(event) {
+  if (event.target == popup) {
+ popup.style.display = "none";
+}
+} 
 
-// Close pop-up when clicking outside of it
-window.addEventListener('click', (e) => {
-  if (e.target === popup) {
-    popup.style.display = 'none';
-  }
-});
+
+const popupContent = document.querySelector('.popup-content');
+
+let angle = 0; // Start with an angle of 0
+const speed = 1; // Set the speed of the animation (change this value to adjust speed)
+
+function animateGlow() {
+  angle += speed; // Increase the angle to move the gradient
+
+  // Apply the animation by adjusting the background position using the angle
+  popupContent.style.setProperty('--bg-position', `${angle}% 50%`);
+
+  // Call the function again to keep the animation going
+  requestAnimationFrame(animateGlow);
+}
+
+// Start the animation
+animateGlow();
