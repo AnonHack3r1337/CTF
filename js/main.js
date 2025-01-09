@@ -155,11 +155,9 @@ document.querySelectorAll('details').forEach(function(details) {
 const popup = document.getElementById('popup');
 const openPopupButton = document.getElementById('openPopup');
 const closePopupButton = document.getElementById('closePopup');
-
-
 const popupContent = document.querySelector('.popup-content');
 
-// Function to close the popup
+// Function to close the popup if clicked/touched outside the content
 function closePopupIfClickedOutside(event) {
   // Check if the clicked/touched element is outside the popup content
   if (!popupContent.contains(event.target)) {
@@ -167,26 +165,41 @@ function closePopupIfClickedOutside(event) {
   }
 }
 
-// Add event listeners for both click and touchstart
-popup.addEventListener('click', closePopupIfClickedOutside);
-popup.addEventListener('touchstart', closePopupIfClickedOutside);
-
-// Open the popup
-openPopupButton.addEventListener('click', () => {
+// Function to open the popup
+function openPopup() {
   popup.style.display = 'flex';
-});
+}
 
-// Close the popup when the close button is clicked
-closePopupButton.addEventListener('click', () => {
+// Function to close the popup
+function closePopup() {
   popup.style.display = 'none';
-});
+}
 
-// Close the popup when clicking outside the content
-popup.addEventListener('click', (event) => {
-  if (!event.target.closest('.popup-content')) {
-    popup.style.display = 'none';
-  }
-});
+// Detect touch events for mobile support
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+// Add event listeners
+if (isTouchDevice) {
+  // Use touchstart for mobile devices
+  openPopupButton.addEventListener('touchstart', (event) => {
+    event.preventDefault(); // Prevent ghost clicks on mobile
+    openPopup();
+  });
+  closePopupButton.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    closePopup();
+  });
+  popup.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    closePopupIfClickedOutside(event);
+  });
+} else {
+  // Use click for non-touch devices
+  openPopupButton.addEventListener('click', openPopup);
+  closePopupButton.addEventListener('click', closePopup);
+  popup.addEventListener('click', closePopupIfClickedOutside);
+}
+
 
 
 
