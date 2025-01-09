@@ -152,21 +152,41 @@ document.querySelectorAll('details').forEach(function(details) {
 });
 
 // Elements
-const openPopup = document.getElementById('openPopup');
-const closePopup = document.getElementById('closePopup');
 const popup = document.getElementById('popup');
+const openPopupButton = document.getElementById('openPopup');
+const closePopupButton = document.getElementById('closePopup');
+
+
+const popupContent = document.querySelector('.popup-content');
 
 // Function to close the popup
 function closePopupIfClickedOutside(event) {
-  if (event.target === popup) {
+  // Check if the clicked/touched element is outside the popup content
+  if (!popupContent.contains(event.target)) {
     popup.style.display = 'none';
   }
 }
 
-// Add event listeners for both `click` and `touchstart`
-window.addEventListener('click', closePopupIfClickedOutside);
-window.addEventListener('touchstart', closePopupIfClickedOutside);
+// Add event listeners for both click and touchstart
+popup.addEventListener('click', closePopupIfClickedOutside);
+popup.addEventListener('touchstart', closePopupIfClickedOutside);
 
+// Open the popup
+openPopupButton.addEventListener('click', () => {
+  popup.style.display = 'flex';
+});
+
+// Close the popup when the close button is clicked
+closePopupButton.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// Close the popup when clicking outside the content
+popup.addEventListener('click', (event) => {
+  if (!event.target.closest('.popup-content')) {
+    popup.style.display = 'none';
+  }
+});
 
 
 
