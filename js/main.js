@@ -157,14 +157,6 @@ const openPopupButton = document.getElementById('openPopup');
 const closePopupButton = document.getElementById('closePopup');
 const popupContent = document.querySelector('.popup-content');
 
-// Function to close the popup if clicked/touched outside the content
-function closePopupIfClickedOutside(event) {
-  // Check if the clicked/touched element is outside the popup content
-  if (!popupContent.contains(event.target)) {
-    popup.style.display = 'none';
-  }
-}
-
 // Function to open the popup
 function openPopup() {
   popup.style.display = 'flex';
@@ -175,30 +167,21 @@ function closePopup() {
   popup.style.display = 'none';
 }
 
-// Detect touch events for mobile support
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-// Add event listeners
-if (isTouchDevice) {
-  // Use touchstart for mobile devices
-  openPopupButton.addEventListener('touchstart', (event) => {
-    event.preventDefault(); // Prevent ghost clicks on mobile
-    openPopup();
-  });
-  closePopupButton.addEventListener('touchstart', (event) => {
-    event.preventDefault();
-    closePopup();
-  });
-  popup.addEventListener('touchstart', (event) => {
-    event.preventDefault();
-    closePopupIfClickedOutside(event);
-  });
-} else {
-  // Use click for non-touch devices
-  openPopupButton.addEventListener('click', openPopup);
-  closePopupButton.addEventListener('click', closePopup);
-  popup.addEventListener('click', closePopupIfClickedOutside);
+// Function to close the popup if clicked outside the popup content
+function closePopupIfClickedOutside(event) {
+  if (!popupContent.contains(event.target)) {
+    popup.style.display = 'none';
+  }
 }
+
+// Stop event propagation for clicks/touches inside the popup content
+popupContent.addEventListener('click', (event) => event.stopPropagation());
+popupContent.addEventListener('touchstart', (event) => event.stopPropagation());
+
+// Event listeners for opening and closing the popup
+openPopupButton.addEventListener('click', openPopup);
+closePopupButton.addEventListener('click', closePopup);
+popup.addEventListener('click', closePopupIfClickedOutside);
 
 
 
