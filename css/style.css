@@ -472,7 +472,15 @@ button:hover {
 
 /* Adjust height for the textarea */
 .popup-content textarea {
-
+  text-align: center; 
+  width: 90%;
+  margin-bottom: 10px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 100px; 
+  overflow-y: auto; 
+  box-sizing: content-box
 }
 /* Style for the character counter */
 #charCount {
