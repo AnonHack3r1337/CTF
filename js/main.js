@@ -210,22 +210,3 @@ messageInput.addEventListener('input', () => {
 
 
 
-
-
-
-const charWarning = document.getElementById('charWarning');
-
-// Update character count and enforce the limit
-messageInput.addEventListener('input', () => {
-  const currentLength = messageInput.value.length;
-
-  if (currentLength > maxChars) {
-    messageInput.value = messageInput.value.slice(0, maxChars);
-    charWarning.style.display = 'block'; // Show the warning
-  } else {
-    charWarning.style.display = 'none'; // Hide the warning if under the limit
-  }
-
-  const remainingChars = maxChars - messageInput.value.length;
-  charCount.textContent = `${remainingChars} characters remaining`;
-});
