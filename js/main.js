@@ -185,3 +185,47 @@ popup.addEventListener('click', closePopupIfClickedOutside);
 // Prevent propagation of clicks and touches inside the popup content
 popupContent.addEventListener('click', (event) => event.stopPropagation());
 popupContent.addEventListener('touchstart', (event) => event.stopPropagation());
+
+
+
+// This is for the message charCounter 100 letter max.
+const messageInput = document.getElementById('contactMessage');
+const charCount = document.getElementById('charCount');
+const maxChars = 100;
+
+// Update character count and enforce the limit
+messageInput.addEventListener('input', () => {
+  const currentLength = messageInput.value.length;
+
+  if (currentLength > maxChars) {
+    // If input exceeds maxChars, trim it and show an alert
+    messageInput.value = messageInput.value.slice(0, maxChars);
+    alert(`You can't exceed ${maxChars} characters.`);
+  }
+
+  // Update the remaining character count
+  const remainingChars = maxChars - messageInput.value.length;
+  charCount.textContent = `${remainingChars} characters remaining`;
+});
+
+
+
+
+
+
+const charWarning = document.getElementById('charWarning');
+
+// Update character count and enforce the limit
+messageInput.addEventListener('input', () => {
+  const currentLength = messageInput.value.length;
+
+  if (currentLength > maxChars) {
+    messageInput.value = messageInput.value.slice(0, maxChars);
+    charWarning.style.display = 'block'; // Show the warning
+  } else {
+    charWarning.style.display = 'none'; // Hide the warning if under the limit
+  }
+
+  const remainingChars = maxChars - messageInput.value.length;
+  charCount.textContent = `${remainingChars} characters remaining`;
+});

@@ -470,6 +470,18 @@ button:hover {
   font-size: 16px;
 }
 
+/* Adjust height for the textarea */
+.popup-content textarea {
+
+}
+/* Style for the character counter */
+#charCount {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
 .popup-content button {
   width: 100%;
 }
