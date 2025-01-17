@@ -1,6 +1,35 @@
 .textHeading {
   font-size: 6.5vw;
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: -0.5em;
+  margin-left: 0;
+  margin-right: 0;
  
+}
+.textHeading2 {
+  margin-bottom: 1em;
+  animation:background-pan 3s linear infinite;
+  font-size: 6vw;
+  width: 100%;
+  min-height: max-content;
+  background: linear-gradient(to right, #00ff00, #ff8000, #00ff00);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: wrap;
+}
+
+.textHeading3 {
+  margin-bottom: -0.2em;
+  animation:background-pan 3s linear infinite;
+  font-size: 6en;
+  min-height: max-content;
+  background: linear-gradient(to right, #00ff00, #ff8000, #00ff00);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
 
 h1 {
@@ -42,6 +71,18 @@ html {
   overflow-x: hidden;
   margin-bottom: 10%;
 }
+
+.topics-container2 {
+  font-size: x-large;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 10%;
+}
+
 
 
 td {
@@ -142,6 +183,7 @@ body {
   font-family: "Courier", monospace;
   color: #00ff00;
   background-color: black;
+  margin-bottom: 4em;
 }
 
 .terminal-box {
@@ -301,10 +343,10 @@ code {
 }
 
 .writeupNotes {
-  text-align: left;
-  line-height: 4rem;
+  text-align: center;
+  margin-top: 1em;
+  line-height: 1em;
   overflow-wrap: break-word;
-  padding: 1rem;
 }
 
 .writeupNotes img {
@@ -352,6 +394,30 @@ footer {
   animation: glowing 1500ms infinite;
 }
 
+
+.footerWithContact2 {
+  position: fixed;
+  box-sizing: border-box;  bottom: 0;
+  width: 100%;
+  border: none;
+  color: #00ff00;
+  font-size: 1em;
+  padding: 2rem;
+  margin-bottom: -1.5rem;
+  text-shadow: 0 0 10px #00ff00;
+  animation: cursor-blink 4s infinite;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 0, 255, 0.5);
+}
+
+
+
 @keyframes cursor-blink {
   0% {
     opacity: 1;
@@ -393,7 +459,7 @@ button:hover {
 
 
 #popup {
-  display: flex;
+  display: flex; /* Hide pop up Fix this at the end.*/
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -538,3 +604,6 @@ button:hover {
   }
 }
 */
+
+
+
