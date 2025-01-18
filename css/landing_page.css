@@ -175,7 +175,7 @@ section{
 }
 .content p{
     font-size: clamp(0.4rem , 0.2rem + 9vw, 1rem);
-    margin: 10px 0;
+    margin: 5px ;
 }
 .social-links i{
     display: inline-flex;
@@ -239,12 +239,12 @@ section{
 
 @media (max-width:440px){
     .main-container .image{
-        width: 50%;
+        width: 80%;
         height: 60%;
         margin-bottom: 0px;
     }
     .main-container .content{
-        width: 80%;
+        width: 95%;
     }
     .main-container button{
         margin-top: 15px;

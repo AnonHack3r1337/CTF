@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/landing_page.css">
-    <title>Cybersecurity</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/landing_page.css">
+    <title>Home</title>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJB1G27CWD"></script>
@@ -25,21 +25,21 @@
                 E.T. <span></span>
             </div>
             <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="home.html">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#">About</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="../index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="skills.html">Skills</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="HackTheBox/index.html">HackTheBox writeups</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="#">Contact</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
         </div>
         <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
     </div>
         <div class="dropdown">
             <div class="links">
-                <a href="home.html">Home</a>
-                <a href="#">About</a>
-                <a href="#">Skills</a>
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
                 <a href="HackTheBox/index.html">HackTheBox writeups</a>
-                <a href="#">Contact</a>
+                <a href="contact.html">Contact</a>
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
         </div>
@@ -64,37 +64,76 @@
                 
                 <div class="content">
 
-                    <div class="content2">
-                        <div id="popup2" class="popup2">
-                            <div class="popup-content2">
-                                <span id="closePopup2" class="close2">&times;</span>
-                                <h2>Stay Updated!</h2>
-                                <p>Sign up to receive alerts about our cybersecurity classes.</p>
-                                <form id="alertForm" action="https://formspree.io/f/xwppwjyg" method="POST">
-                                    <input type="text" id="contactInfo" name="First Name" placeholder="Name" autocomplete="off" required>
-                                    <input type="text" id="contactInfo" name="email" placeholder="Email Address" autocomplete="off" required>
-                                    <input type="text" id="contactInfo" name="phone" placeholder="Phone Number (Optional)" autocomplete="off">
-                                    <textarea id="contactMessage" name="message" placeholder="Leave a Message&#10; (Optional)" autocomplete="off"
-                                    ></textarea>
-                                    <div id="charCount">100 characters remaining</div>
-                                    <button type="submit">Sign Up</button>
-                                </form>
-                            </div>
-                        </div>
-                        <button id="openPopup2">Join Our $20 Cybersecurity Class Today!</button>
-                    </div>
+
                     
 
 
 
-                    <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey I'm <span>Edmond</span></h1>
+                    <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700"><span>Home</span></h1>
 
 
 
-                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a <span class="typewriter-text"></span><label for="">|</label></div>
-                    <p >Cybersecurity professional dedicated to protecting organizations and the people they serve.</p>
+                    <style>
+                        p {
+                          font-size: 16px; /* Adjust size as needed */
+                          line-height: 1.5; /* Improve readability */
+                          margin: 10px 0px; /* Space between paragraphs */
+                        }
+                      
+                        ul, ol {
+                          margin: 10px 20px; /* Add spacing for lists */
+                          padding: 0; /* Remove extra padding */
+                          font-size: 14px; /* Smaller font for lists */
+                        }
+                      
+                        strong {
+                          font-size: 16px;
+                        }
+                      
+                        em {
+                          font-style: italic;
+                          color: #555; /* Slightly muted color for emphasis */
+                        }
+                      </style>
+                      
+                    <p >
+                        
+                        <p>
+                    
+                          <p>
+
+                            📅 <strong>Sign Up Today:</strong>     
+                            <div class="content2">
+                                <div id="popup2" class="popup2">
+                                    <div class="popup-content2">
+                                        <span id="closePopup2" class="close2">&times;</span>
+                                        <h2>Stay Updated!</h2>
+                                        <p>Sign up to receive alerts about our cybersecurity classes.</p>
+                                        <form id="alertForm" action="https://formspree.io/f/xwppwjyg" method="POST">
+                                            <input type="text" id="contactInfo" name="First Name" placeholder="Name" autocomplete="off" required>
+                                            <input type="text" id="contactInfo" name="email" placeholder="Email Address" autocomplete="off" required>
+                                            <input type="text" id="contactInfo" name="phone" placeholder="Phone Number (Optional)" autocomplete="off">
+                                            <textarea id="contactMessage" name="message" placeholder="Leave a Message&#10; (Optional)" autocomplete="off"
+                                            ></textarea>
+                                            <div id="charCount">100 characters remaining</div>
+                                            <button type="submit">Sign Up</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <button id="openPopup2">Join Our $20 Cybersecurity Class Today!</button>
+                            </div><br>
+                            
+                    
+                          </p>
+                          
+
+
+                    </p>
+                    
+                    
                     <a href="HackTheBox/index.html" class="htbButton">HackTheBox Writeups</a>
 
+                    
 
                     <div class="social-links">
                         <a href="https://github.com/AnonHack3r1337" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"><i class="fa-brands fa-github"></i></a>
@@ -144,7 +183,7 @@
     <script>
       AOS.init({offset:0});
     </script>
-    <script src="../../js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 <div class="footerWrapper">
